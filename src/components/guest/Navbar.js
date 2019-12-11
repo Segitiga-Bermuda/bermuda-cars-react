@@ -1,6 +1,7 @@
 import React from "react";
 import { Nav, Navbar, Container } from "react-bootstrap";
-import { Link as Links } from "react-router-dom";
+import { Link } from "react-router-dom";
+import Navlogo from "../../assets/images/logonav.png";
 
 const Team = () => {
   return (
@@ -9,9 +10,12 @@ const Team = () => {
         collapseOnSelect
         expand="lg"
         variant="dark"
-        style={{ backgroundColor: "#000000" }}
+        style={{ backgroundColor: "#183BF0" }}
       >
         <Container>
+          <Navbar.Brand>
+            <img src={Navlogo} alt="navlogo" width="auto" height="60px" />
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ml-auto navnama">
@@ -19,7 +23,7 @@ const Team = () => {
                 href="#features"
                 style={{ color: "white", marginLeft: "20px" }}
               >
-                <Links
+                <Link
                   to="/"
                   style={{
                     color: "white",
@@ -28,10 +32,10 @@ const Team = () => {
                 >
                   {" "}
                   Home
-                </Links>
+                </Link>
               </Nav.Link>
               <Nav.Link style={{ color: "white", marginLeft: "20px" }}>
-                <Links
+                <Link
                   to="/about"
                   style={{
                     color: "white",
@@ -39,51 +43,40 @@ const Team = () => {
                   }}
                 >
                   About Us
-                </Links>
+                </Link>
               </Nav.Link>
               <Nav.Link style={{ color: "white", marginLeft: "20px" }}>
-                <Links
-                  to="/feature"
+                <Link
+                  to="/features"
                   style={{
                     color: "white",
                     textDecoration: "none"
                   }}
                 >
                   Features
-                </Links>
+                </Link>
               </Nav.Link>
               <Nav.Link style={{ color: "white", marginLeft: "20px" }}>
-                <Links
-                  to="/contact"
+                <Link
+                  to="/contacts"
                   style={{
                     color: "white",
                     textDecoration: "none"
                   }}
                 >
                   Contacts
-                </Links>
+                </Link>
               </Nav.Link>
               <Nav.Link style={{ color: "white", marginLeft: "20px" }}>
-                <Links
-                  to="/login"
+                <Link
+                  to="/log-in"
                   style={{
                     color: "white",
                     textDecoration: "none"
                   }}
                 >
                   Login
-                </Links>
-              </Nav.Link>
-              <Nav.Link style={{ color: "white", marginLeft: "20px" }}>
-                <Links
-                  to="/register"
-                  style={{
-                    color: "white",
-                    textDecoration: "none"
-                  }}
-                >
-                  Register
-                </Links>
+                </Link>
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
