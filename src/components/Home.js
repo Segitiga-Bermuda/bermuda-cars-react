@@ -1,59 +1,18 @@
 import React, { Fragment } from "react";
-import { Card, Button } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import Header from "./Header";
-import money from "../assets/images/icons/money.png";
-import absensi from "../assets/images/icons/absensi.png";
+import DirectionsCarIcon from "@material-ui/icons/DirectionsCar";
+import MotorcycleTwoToneIcon from "@material-ui/icons/MotorcycleTwoTone";
+import LocalAirportIcon from "@material-ui/icons/LocalAirport";
+import TrainIcon from "@material-ui/icons/Train";
+import DirectionsBusIcon from "@material-ui/icons/DirectionsBus";
+import LocalShippingIcon from "@material-ui/icons/LocalShipping";
+import DirectionsBoatIcon from "@material-ui/icons/DirectionsBoat";
 
 export default function Home() {
   return (
     <Fragment>
       <Header />
-      <div
-        style={{
-          display: "flex",
-          flex: "wrap",
-          justifyContent: "center"
-        }}
-      >
-        <Card
-          border="primary"
-          style={{
-            width: "18rem",
-            marginLeft: "10px",
-            textAlign: "center",
-            backgroundColor: "#D4E0F7"
-          }}
-        >
-          <Card.Body>
-            <Card.Img variant="top" src={money} height="200px" />
-            <Card.Title>Economy Report</Card.Title>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
-          </Card.Body>
-        </Card>
-        <Card
-          border="primary"
-          style={{
-            width: "18rem",
-            marginLeft: "50px",
-            textAlign: "center",
-            backgroundColor: "#D4E0F7"
-          }}
-        >
-          <Card.Body>
-            <Card.Img variant="top" src={absensi} height="200px" />
-            <Card.Title>Attendance Report</Card.Title>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
-          </Card.Body>
-        </Card>
-      </div>
       <br />
       <hr width="50%" />
       <div style={{ textAlign: "center", marginBottom: "30px" }}>
@@ -71,6 +30,69 @@ export default function Home() {
       </div>
       <hr width="50%" />
       <br />
+      <div
+        style={{
+          display: "flex",
+          flex: "wrap",
+          justifyContent: "center"
+        }}
+      >
+        <Card
+          style={{
+            width: "18rem",
+            marginLeft: "10px",
+            textAlign: "center",
+            border: "none"
+          }}
+        >
+          <Card.Body>
+            <Card.Title>Land</Card.Title>
+            <Card.Text>
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </Card.Text>
+            <DirectionsCarIcon color="primary" fontSize="large" />
+            <MotorcycleTwoToneIcon color="primary" fontSize="large" />
+            <TrainIcon color="primary" fontSize="large" />
+            <DirectionsBusIcon color="primary" fontSize="large" />
+            <LocalShippingIcon color="primary" fontSize="large" />
+          </Card.Body>
+        </Card>
+        <Card
+          style={{
+            width: "18rem",
+            marginLeft: "50px",
+            textAlign: "center",
+            border: "none"
+          }}
+        >
+          <Card.Body>
+            <Card.Title>Water</Card.Title>
+            <Card.Text>
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </Card.Text>
+            <DirectionsBoatIcon color="primary" fontSize="large" />
+          </Card.Body>
+        </Card>
+        <Card
+          style={{
+            width: "18rem",
+            marginLeft: "50px",
+            textAlign: "center",
+            border: "none"
+          }}
+        >
+          <Card.Body>
+            <Card.Title>Air</Card.Title>
+            <Card.Text>
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </Card.Text>
+            <LocalAirportIcon color="primary" fontSize="large" />
+          </Card.Body>
+        </Card>
+      </div>
     </Fragment>
   );
 }
