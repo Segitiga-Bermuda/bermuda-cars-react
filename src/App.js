@@ -27,7 +27,10 @@ const App = () => {
           <Route path="/log-in" exact={true}>
             <Login />
           </Route>
-          <Route path="/register">
+          <Route path="/user/register">
+            <Register />
+          </Route>
+          <Route path="/company/register">
             <Register />
           </Route>
           <Route path="/log-out" exact={true}>
