@@ -1,18 +1,18 @@
-import React, { Fragment } from "react";
-import { default as MemberNavbar } from "./member/Navbar";
+import React, { Fragment, Component } from "react";
+import { default as MemberNavbar } from "./member/MemberNavbar";
 import { default as GuestNavbar } from "./guest/Navbar";
 import { withRouter } from "react-router-dom";
 
-const Navbar = () => {
-  return (
-    <Fragment>
-      {JSON.parse(localStorage.getItem("isLogin")) !== true ? (
-        <GuestNavbar />
-      ) : (
-        <MemberNavbar />
-      )}
-    </Fragment>
-  );
-};
+class Navigation extends Component {
+  constructor(props) {
+    super(props);
+  }
 
-export default withRouter(Navbar);
+  render() {
+    let user = localStorage.getItem("token");
+
+    return <Fragment>{user ? <MemberNavbar /> : <GuestNavbar />}</Fragment>;
+  }
+}
+
+export default withRouter(Navigation);

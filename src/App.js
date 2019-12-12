@@ -8,7 +8,8 @@ import {
   Register,
   Logout,
   Feature,
-  Contact
+  Contact,
+  Register2
 } from "./components";
 import "./App.css";
 
@@ -28,6 +29,9 @@ const App = () => {
             <Login />
           </Route>
           <Route path="/user/register">
+            <Register2 />
+          </Route>
+          <Route path="/company/register">
             <Register />
           </Route>
           <Route path="/log-out" exact={true}>

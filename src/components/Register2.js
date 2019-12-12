@@ -16,7 +16,7 @@ import DayPickerInput from "react-day-picker/DayPickerInput";
 
 import "react-day-picker/lib/style.css";
 
-class Register extends Component {
+class Register2 extends Component {
   constructor(props) {
     super(props);
   }
@@ -143,28 +143,6 @@ class Register extends Component {
                       <FormGroup>
                         <FormControl
                           required
-                          id="employerid"
-                          label="employerid"
-                          name="employerid"
-                          autoComplete="employerid"
-                          autoFocus
-                          placeholder="Employer ID"
-                        />
-                      </FormGroup>
-                      <FormGroup>
-                        <FormControl
-                          required
-                          id="departement"
-                          label="departement"
-                          name="departement"
-                          autoComplete="departement"
-                          autoFocus
-                          placeholder="Departement"
-                        />
-                      </FormGroup>
-                      <FormGroup>
-                        <FormControl
-                          required
                           id="email"
                           label="Email Address"
                           name="email"
@@ -183,13 +161,6 @@ class Register extends Component {
                           autoComplete="current-password"
                           placeholder="Password"
                         />
-                      </FormGroup>
-                      <FormGroup>
-                        <FormControl as="select">
-                          <option value="Admin">Admin</option>
-                          <option value="Executive">Executive</option>
-                          <option value="Employer">Employer</option>
-                        </FormControl>
                       </FormGroup>
                       <FormGroup>
                         <Button
@@ -232,4 +203,4 @@ class Register extends Component {
   }
 }
 
-export default withRouter(Register);
+export default withRouter(Register2);
