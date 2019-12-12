@@ -147,7 +147,7 @@ export default function Login() {
                         }}
                       >
                         Don't have an account?&nbsp;
-                        <Link to="/user/register2">Create one</Link>
+                        <Link to="/user/register">Create account.</Link>
                       </p>
                     </FormGroup>
                   </Form>

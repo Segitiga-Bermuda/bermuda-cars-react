@@ -30,9 +30,6 @@ const App = () => {
           <Route path="/user/register">
             <Register />
           </Route>
-          <Route path="/company/register">
-            <Register />
-          </Route>
           <Route path="/log-out" exact={true}>
             <Logout />
           </Route>
