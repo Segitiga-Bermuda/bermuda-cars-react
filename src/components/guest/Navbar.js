@@ -75,7 +75,18 @@ const Team = () => {
                     textDecoration: "none"
                   }}
                 >
-                  Login
+                  Log In
+                </Link>
+              </Nav.Link>
+              <Nav.Link style={{ color: "white", marginLeft: "20px" }}>
+                <Link
+                  to="/user/register"
+                  style={{
+                    color: "white",
+                    textDecoration: "none"
+                  }}
+                >
+                  Register
                 </Link>
               </Nav.Link>
             </Nav>

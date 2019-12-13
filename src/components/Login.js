@@ -1,4 +1,5 @@
-import React from "react";
+import React, { Component } from "react";
+import axios from "axios";
 import Profile from "../assets/images/teamwork.png";
 import {
   Col,
@@ -10,153 +11,304 @@ import {
   Form,
   FormGroup
 } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import background from "../assets/images/background/bg1.jpg";
+import Swal from "sweetalert2";
 
-export default function Login() {
-  return (
-    <Container
-      fluid={true}
-      style={{
-        backgroundImage: `url(${background})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        minHeight: window.innerHeight - 40 + "px",
-        padding: "0",
-        width: "100%"
-      }}
-    >
-      <Row>
-        <Col md={{ span: 6, offset: 3 }}>
-          <Row
-            style={{
-              display: "flex",
-              minHeight: window.innerHeight - 40 + "px",
-              alignItems: "center"
-            }}
-          >
-            <Col xs={{ span: 12 }}>
-              <Row
-                style={{
-                  backgroundColor: "rgba(212, 218, 247, 0.5)",
-                  borderRadius: "20px"
-                }}
-              >
-                <Col
-                  xs={{ span: 12, order: 1 }}
+class Login extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: "",
+      password: "",
+      role: "User"
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.submitForm = this.submitForm.bind(this);
+  }
+  handleChange(e) {
+    let val = e.target.value;
+
+    this.setState({
+      [e.target.name]: val
+    });
+  }
+  submitForm(e) {
+    e.preventDefault();
+
+    if (this.state.email === "" || this.state.password === "") {
+      Swal.fire({
+        title: "Field is empty",
+        text: "Please fill all field",
+        icon: "error"
+      });
+      return null;
+    }
+    if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(this.state.email)) {
+      Swal.fire({
+        title: "Email Format Is Wrong",
+        text: "Please fill email field again",
+        icon: "error"
+      });
+      return null;
+    }
+    let path = process.env.REACT_APP_API;
+    if (this.state.role === "Admin") {
+      path += "/admins/log-in";
+      axios
+        .post(path, this.state)
+        .then(result => {
+          if (result.data.message === "Email or password is wrong!") {
+            Swal.fire({
+              text: result.data.message,
+              icon: "error"
+            });
+            return null;
+          }
+
+          Swal.fire({
+            title: "You Will be Redirect to Dasboard Page",
+            icon: "success"
+          }).then(decision => {
+            localStorage.setItem("token", JSON.stringify(result.data.token));
+            this.props.history.push("/dasboard");
+          });
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    } else if (this.state.role === "Executive") {
+      path += "/executives/log-in";
+      axios
+        .post(path, this.state)
+        .then(result => {
+          if (result.data.message === "Email or password is wrong!") {
+            Swal.fire({
+              text: result.data.message,
+              icon: "error"
+            });
+            return null;
+          }
+
+          Swal.fire({
+            title: "You Will be Redirect to Dasboard Page",
+            icon: "success"
+          }).then(decision => {
+            localStorage.setItem("token", JSON.stringify(result.data.token));
+            this.props.history.push("/");
+          });
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    } else if (this.state.role === "Employer") {
+      path += "/employers/log-in";
+      axios
+        .post(path, this.state)
+        .then(result => {
+          if (result.data.message === "Email or password is wrong!") {
+            Swal.fire({
+              text: result.data.message,
+              icon: "error"
+            });
+            return null;
+          }
+
+          Swal.fire({
+            title: "You Will be Redirect to Dasboard Page",
+            icon: "success"
+          }).then(decision => {
+            localStorage.setItem("token", JSON.stringify(result.data.token));
+            this.props.history.push("/");
+          });
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    } else if (this.state.role === "User") {
+      path += "/users/log-in";
+      axios
+        .post(path, this.state)
+        .then(result => {
+          if (result.data.message === "Email or password is wrong!") {
+            Swal.fire({
+              text: result.data.message,
+              icon: "error"
+            });
+            return null;
+          }
+
+          Swal.fire({
+            title: "You Will be Redirect to Dasboard Page",
+            icon: "success"
+          }).then(decision => {
+            localStorage.setItem("token", JSON.stringify(result.data.token));
+            this.props.history.push("/");
+          });
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    }
+  }
+  render() {
+    return (
+      <Container
+        fluid={true}
+        style={{
+          backgroundImage: `url(${background})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          minHeight: window.innerHeight - 40 + "px",
+          padding: "0",
+          width: "100%"
+        }}
+      >
+        <Row>
+          <Col md={{ span: 6, offset: 3 }}>
+            <Row
+              style={{
+                display: "flex",
+                minHeight: window.innerHeight - 40 + "px",
+                alignItems: "center"
+              }}
+            >
+              <Col xs={{ span: 12 }}>
+                <Row
                   style={{
-                    backgroundColor: "#183bf0",
-                    boxSizing: "border-box",
-                    padding: "10px",
-                    textAlign: "center",
-                    color: "white",
-                    borderRadius: "20px 20px 0 0",
-                    fontWeight: 900,
-                    fontSize: "2em"
+                    backgroundColor: "rgba(212, 218, 247, 0.5)",
+                    borderRadius: "20px"
                   }}
                 >
-                  Login
-                </Col>
-                <Col
-                  md={{ span: 6, order: 2 }}
-                  xs={{ span: 12, order: 2 }}
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    boxSizing: "border-box",
-                    padding: "20px"
-                  }}
-                >
-                  <Image
-                    roundedCircle
-                    src={Profile}
-                    alt="profile"
+                  <Col
+                    xs={{ span: 12, order: 1 }}
                     style={{
-                      display: "block",
-                      width: "75%",
-                      margin: "0 auto"
+                      backgroundColor: "#183bf0",
+                      boxSizing: "border-box",
+                      padding: "10px",
+                      textAlign: "center",
+                      color: "white",
+                      borderRadius: "20px 20px 0 0",
+                      fontWeight: 900,
+                      fontSize: "2em"
                     }}
-                  />
-                </Col>
-                <Col
-                  md={{ span: 6, order: 3 }}
-                  xs={{ span: 12, order: 3 }}
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    boxSizing: "border-box",
-                    padding: "20px",
-                    justifyContent: "center"
-                  }}
-                >
-                  <Form noValidate>
-                    <FormGroup>
-                      <FormControl as="select">
-                        <option value="Admin">Admin</option>
-                        <option value="Executive">Executive</option>
-                        <option value="Employer">Employer</option>
-                        <option value="User">User</option>
-                      </FormControl>
-                    </FormGroup>
-                    <FormGroup>
-                      <FormControl
-                        required
-                        id="email"
-                        label="Email Address"
-                        name="email"
-                        autoComplete="email"
-                        autoFocus
-                        placeholder="Email"
-                      />
-                    </FormGroup>
-                    <FormGroup>
-                      <FormControl
-                        required
-                        name="password"
-                        label="Password"
-                        type="password"
-                        id="password"
-                        autoComplete="current-password"
-                        placeholder="Password"
-                      />
-                    </FormGroup>
-                    <FormGroup>
-                      <Button
-                        type="submit"
-                        variant="success"
-                        style={{
-                          display: "block",
-                          margin: "0 auto",
-                          minWidth: "150px"
-                        }}
-                      >
-                        Sign In
-                      </Button>
-                    </FormGroup>
-                    <FormGroup
+                  >
+                    Login
+                  </Col>
+                  <Col
+                    md={{ span: 6, order: 2 }}
+                    xs={{ span: 12, order: 2 }}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      boxSizing: "border-box",
+                      padding: "20px"
+                    }}
+                  >
+                    <Image
+                      roundedCircle
+                      src={Profile}
+                      alt="profile"
                       style={{
-                        backgroundColor: "white"
+                        display: "block",
+                        width: "75%",
+                        margin: "0 auto"
                       }}
-                    >
-                      <p
+                    />
+                  </Col>
+                  <Col
+                    md={{ span: 6, order: 3 }}
+                    xs={{ span: 12, order: 3 }}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      boxSizing: "border-box",
+                      padding: "20px",
+                      justifyContent: "center"
+                    }}
+                  >
+                    <Form noValidate>
+                      <FormGroup>
+                        <FormControl
+                          as="select"
+                          value={this.state.role}
+                          name="role"
+                          id="role"
+                          onChange={e => this.handleChange(e)}
+                        >
+                          <option value="Admin">Admin</option>
+                          <option value="Executive">Executive</option>
+                          <option value="Employer">Employer</option>
+                          <option value="User">User</option>
+                        </FormControl>
+                      </FormGroup>
+                      <FormGroup>
+                        <FormControl
+                          required
+                          id="email"
+                          label="Email Address"
+                          name="email"
+                          autoComplete="email"
+                          autoFocus
+                          placeholder="Email"
+                          value={this.state.email}
+                          onChange={e => this.handleChange(e)}
+                        />
+                      </FormGroup>
+                      <FormGroup>
+                        <FormControl
+                          required
+                          name="password"
+                          label="Password"
+                          type="password"
+                          id="password"
+                          autoComplete="current-password"
+                          placeholder="Password"
+                          value={this.state.password}
+                          onChange={e => this.handleChange(e)}
+                        />
+                      </FormGroup>
+                      <FormGroup>
+                        <Button
+                          type="submit"
+                          variant="success"
+                          onClick={this.submitForm}
+                          style={{
+                            display: "block",
+                            margin: "0 auto",
+                            minWidth: "150px"
+                          }}
+                        >
+                          Sign In
+                        </Button>
+                      </FormGroup>
+                      <FormGroup
                         style={{
-                          boxSizing: "border-box",
-                          padding: "5px 5px 2.5px 5px",
-                          textAlign: "center"
+                          backgroundColor: "white"
                         }}
                       >
-                        Don't have an account?&nbsp;
-                        <Link to="/user/register">Create account.</Link>
-                      </p>
-                    </FormGroup>
-                  </Form>
-                </Col>
-              </Row>
-            </Col>
-          </Row>
-        </Col>
-      </Row>
-    </Container>
-  );
+                        <p
+                          style={{
+                            boxSizing: "border-box",
+                            padding: "5px 5px 2.5px 5px",
+                            textAlign: "center"
+                          }}
+                        >
+                          Don't have an account?&nbsp;
+                          <Link to="/user/register">Create account.</Link>
+                        </p>
+                      </FormGroup>
+                    </Form>
+                  </Col>
+                </Row>
+              </Col>
+            </Row>
+          </Col>
+        </Row>
+      </Container>
+    );
+  }
 }
+
+export default withRouter(Login);

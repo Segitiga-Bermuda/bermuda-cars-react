@@ -8,6 +8,9 @@ import TrainIcon from "@material-ui/icons/Train";
 import DirectionsBusIcon from "@material-ui/icons/DirectionsBus";
 import LocalShippingIcon from "@material-ui/icons/LocalShipping";
 import DirectionsBoatIcon from "@material-ui/icons/DirectionsBoat";
+import land from "../assets/images/icons/land.png";
+import water from "../assets/images/icons/water.png";
+import air from "../assets/images/icons/air.png";
 
 export default function Home() {
   return (
@@ -46,6 +49,16 @@ export default function Home() {
           }}
         >
           <Card.Body>
+            <Card.Img
+              variant="top"
+              src={`${land}`}
+              style={{
+                width: "40%",
+                height: "40%",
+                border: "5px solid gray",
+                borderRadius: "50%"
+              }}
+            />
             <Card.Title>Land</Card.Title>
             <Card.Text>
               Some quick example text to build on the card title and make up the
@@ -67,6 +80,16 @@ export default function Home() {
           }}
         >
           <Card.Body>
+            <Card.Img
+              variant="top"
+              src={`${water}`}
+              style={{
+                width: "40%",
+                height: "40%",
+                border: "5px solid gray",
+                borderRadius: "50%"
+              }}
+            />
             <Card.Title>Water</Card.Title>
             <Card.Text>
               Some quick example text to build on the card title and make up the
@@ -84,6 +107,16 @@ export default function Home() {
           }}
         >
           <Card.Body>
+            <Card.Img
+              variant="top"
+              src={`${air}`}
+              style={{
+                width: "40%",
+                height: "40%",
+                border: "5px solid gray",
+                borderRadius: "50%"
+              }}
+            />
             <Card.Title>Air</Card.Title>
             <Card.Text>
               Some quick example text to build on the card title and make up the

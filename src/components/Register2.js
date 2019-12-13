@@ -14,10 +14,11 @@ import { Link, withRouter } from "react-router-dom"
 import background from "../assets/images/background/bg2.jpg"
 import DayPickerInput from "react-day-picker/DayPickerInput"
 import Swal from 'sweetalert2'
-import { AXIOS } from '../helpers'
+import axios from 'axios'
+
 import "react-day-picker/lib/style.css";
 
-class Register extends Component {
+class Register2 extends Component {
   constructor(props) {
     super(props)
 
@@ -25,33 +26,13 @@ class Register extends Component {
       fullName: '',
       born: '',
       gender: '',
-      employerId: '',
-      departement: '',
       email: '',
-      password: '',
-      role: 'Employer'
+      password: ''
     }
 
     this.handleChange = this.handleChange.bind(this)
     this.handleDayChange = this.handleDayChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
-  }
-
-  handleChange(e) {
-    let val = e.target.value
-
-    this.setState({
-      [e.target.name]: val
-    })
-  }
-
-  handleDayChange(selectedDay, modifiers, DayPickerInput) {
-    let born = new Date(selectedDay),
-      born2 = new Date(born.getUTCFullYear() + '-' + (born.getUTCMonth() + 1) + '-' + born.getUTCDate())
-
-    this.setState({
-      born: born2
-    })
   }
 
   handleSubmit(e) {
@@ -73,11 +54,8 @@ class Register extends Component {
       this.state.fullName === '' ||
       this.state.born === '' ||
       this.state.gender === '' ||
-      this.state.employerId === '' ||
-      this.state.departement === '' ||
       this.state.email === '' ||
-      this.state.password === '' ||
-      this.state.role === ''
+      this.state.password === ''
     ) {
       Swal.fire({
         title: 'Field is empty',
@@ -93,43 +71,51 @@ class Register extends Component {
         title: 'Email Format Is Wrong',
         text: 'Please fill email field again',
         icon: 'error'
-      })
+      });
 
       return null;
     }
 
-    let path = process.env.REACT_APP_API + '/admins/add-new-account'
+    let path = process.env.REACT_APP_API + '/users/register'
 
-    console.log(path)
-    AXIOS()
+    axios
       .post(path, this.state)
       .then(result => {
-        console.log(result)
         if (result.data.message === 'Email have been used!') {
           Swal.fire({
             title: 'Email have been used!',
             icon: 'error'
-          })
-        } else if (result.data.message === 'Just admin allowed to register new account.') {
-          Swal.fire({
-            title: result.data.message,
-            icon: 'warning'
-          })
-        } else if (result.data.message === 'You are not allowed to enter this endpoints.') {
-          Swal.fire({
-            title: result.data.message,
-            icon: 'warning'
           })
         } else {
           Swal.fire({
             title: 'Success Create Account',
             icon: 'success'
           })
+            .then(decision => {
+              this.props.history.push('/log-in')
+            })
         }
       })
       .catch(error => {
         console.log(error)
       })
+  }
+
+  handleDayChange(selectedDay, modifiers, DayPickerInput) {
+    let born = new Date(selectedDay),
+      born2 = new Date(born.getUTCFullYear() + '-' + (born.getUTCMonth() + 1) + '-' + born.getUTCDate())
+
+    this.setState({
+      born: born2
+    })
+  }
+
+  handleChange(e) {
+    let val = e.target.value
+
+    this.setState({
+      [e.target.name]: val
+    })
   }
 
   render() {
@@ -219,7 +205,6 @@ class Register extends Component {
                           autoFocus
                           placeholder="Full Name"
                           onChange={e => this.handleChange(e)}
-                          value={this.state.fullName}
                         />
                       </FormGroup>
                       <FormGroup>
@@ -256,32 +241,6 @@ class Register extends Component {
                       <FormGroup>
                         <FormControl
                           required
-                          id="employerId"
-                          label="Employer ID"
-                          name="employerId"
-                          autoComplete="employerId"
-                          autoFocus
-                          placeholder="Employer ID"
-                          onChange={e => this.handleChange(e)}
-                          value={this.state.employerId}
-                        />
-                      </FormGroup>
-                      <FormGroup>
-                        <FormControl
-                          required
-                          id="departement"
-                          label="Departement"
-                          name="departement"
-                          autoComplete="departement"
-                          autoFocus
-                          placeholder="Departement"
-                          onChange={e => this.handleChange(e)}
-                          value={this.state.departement}
-                        />
-                      </FormGroup>
-                      <FormGroup>
-                        <FormControl
-                          required
                           id="email"
                           label="Email Address"
                           name="email"
@@ -289,7 +248,6 @@ class Register extends Component {
                           autoFocus
                           placeholder="Email Address"
                           onChange={e => this.handleChange(e)}
-                          value={this.state.email}
                         />
                       </FormGroup>
                       <FormGroup>
@@ -302,19 +260,10 @@ class Register extends Component {
                           autoComplete="password"
                           placeholder="Password"
                           onChange={e => this.handleChange(e)}
-                          value={this.state.password}
                         />
                       </FormGroup>
                       <FormGroup>
-                        <FormControl as="select" name="role" id="role" value={this.state.role} onChange={this.handleChange}>
-                          <option value="Admin">Admin</option>
-                          <option value="Executive">Executive</option>
-                          <option value="Employer">Employer</option>
-                        </FormControl>
-                      </FormGroup>
-                      <FormGroup>
                         <Button
-                          type="submit"
                           variant="success"
                           style={{
                             display: "block",
@@ -325,6 +274,22 @@ class Register extends Component {
                         >
                           Sign Up
                         </Button>
+                      </FormGroup>
+                      <FormGroup
+                        style={{
+                          backgroundColor: "white"
+                        }}
+                      >
+                        <p
+                          style={{
+                            boxSizing: "border-box",
+                            padding: "5px 5px 2.5px 5px",
+                            textAlign: "center"
+                          }}
+                        >
+                          Already have an account?&nbsp;
+                          <Link to="/log-in">Log in</Link>
+                        </p>
                       </FormGroup>
                     </Form>
                   </Col>
@@ -338,4 +303,4 @@ class Register extends Component {
   }
 }
 
-export default withRouter(Register);
+export default withRouter(Register2);
