@@ -26,7 +26,7 @@ export default function Cotact() {
   return (
     <Fragment>
       <Header />
-      <Jumbotron>
+      <Jumbotron style={{ backgroundColor: "white" }}>
         <Row>
           <Col style={{ display: "flex", alignItems: "center" }}>
             <List className={classes.root}>

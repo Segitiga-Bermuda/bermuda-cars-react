@@ -71,7 +71,7 @@ class Login extends Component {
             icon: "success"
           }).then(decision => {
             localStorage.setItem("token", JSON.stringify(result.data.token));
-            this.props.history.push("/");
+            this.props.history.push("/dasboard");
           });
         })
         .catch(error => {

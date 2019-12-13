@@ -52,7 +52,12 @@ export default function Home() {
             <Card.Img
               variant="top"
               src={`${land}`}
-              style={{ width: "40%", height: "40%" }}
+              style={{
+                width: "40%",
+                height: "40%",
+                border: "5px solid gray",
+                borderRadius: "50%"
+              }}
             />
             <Card.Title>Land</Card.Title>
             <Card.Text>
@@ -78,7 +83,12 @@ export default function Home() {
             <Card.Img
               variant="top"
               src={`${water}`}
-              style={{ width: "40%", height: "40%" }}
+              style={{
+                width: "40%",
+                height: "40%",
+                border: "5px solid gray",
+                borderRadius: "50%"
+              }}
             />
             <Card.Title>Water</Card.Title>
             <Card.Text>
@@ -100,7 +110,12 @@ export default function Home() {
             <Card.Img
               variant="top"
               src={`${air}`}
-              style={{ width: "40%", height: "40%" }}
+              style={{
+                width: "40%",
+                height: "40%",
+                border: "5px solid gray",
+                borderRadius: "50%"
+              }}
             />
             <Card.Title>Air</Card.Title>
             <Card.Text>
