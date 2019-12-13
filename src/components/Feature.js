@@ -1,6 +1,10 @@
 import React from "react";
-import { Container, Row, Col, Card } from "react-bootstrap";
+import { Container, Row, Col, Card, Image } from "react-bootstrap";
 import Header from "./Header";
+import economy from "../assets/images/economy.png";
+import absence from "../assets/images/absence.png";
+import report from "../assets/images/report.png";
+import audia5 from "../assets/images/audia5.png";
 
 export default function About() {
   return (
@@ -8,121 +12,85 @@ export default function About() {
       <Header />
       <Container style={{marginBottom: "30px", width:"100%"}}>
       <div style={{ textAlign: "center", marginBottom: "30px" }}>
-        <h2>About Us</h2>
+        <h2>Features</h2>
         <br />
         <hr width="50%" />
       </div>
 
       <div style={{ textAlign: "center", marginBottom: "30px" }}>
-        <h3>Company History</h3>
-        <p style={{ width: "80%", margin: "0px auto" }}>
-          Bermuda Motors adalah jaringan jasa penjualan, perawatan,
-          perbaikan dan penyediaan suku cadang ottomotif yang berdiri sejak tahun 2019.
-          Saat ini BermudaMotors adalah retailer otomotif terbesar di Indonesia.
-          Kedepannya jumlah jaringan BermudaMotors pun akan terus bertambah seiring dengan pertumbuhan bisnis,
-          serta untuk memenuhi kebutuhan seluruh pelanggan. Sesuai dengan slogan-nya “Urusan Otomotif Lebih Mudah!”,
-          Bermuda Motors senantiasa berupaya memberikan pelayanan yang terbaik bagi seluruh pelanggannya
-          dalam membeli dan memiliki kendaraan.
-        </p>
+      <h3>Bermuda Motors</h3>
       </div>
       <hr width="100%" />
       <br />
 
-          <Row>        
-            <Col>
-              <h3 className="text-danger" style={{ textAlign: 'center'}}>
-                OUR VISSION
-              </h3>
-            </Col>
-            <Col style={{ textAlign: 'center'}}>
-            <Card style={{ width: '100%' }}>
-              <Card.Body>                
-                <Card.Text>
-                To be the best and most reliable Toyota Dealer in Indonesia through world class processes
-                </Card.Text>               
-              </Card.Body>
-            </Card>
-            </Col>                 
-          </Row>
-        <hr width="100%" />
+      <Row>
+            <Col md={{span: 4}}>
+      <Card
+          style={{
+            width: "18rem",
+            marginLeft: "10px",
+            textAlign: "center",
+            border: "none"
+          }}
+        >
+          <Card.Body>
+            <Card.Title>Economy</Card.Title>
+            <Card.Img variant="top" img src={economy} alt="economy" />
+            <Card.Text>
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </Card.Text>
+          </Card.Body>
+        </Card>
+        </Col>
+        <Col md={{span: 4}}>
+          <Image thumbnail src={audia5} alt="Car" style={{width: '100%', height: 'auto'}} />
+        </Col>
+        </Row>
 
-          <Row>        
-           <Col style={{ textAlign: 'center'}}>
-           <Card style={{ width: '100%' }}>
-              <Card.Body>                
-                <Card.Text>
-                To be the best and most reliable Toyota Dealer in Indonesia through world class processes
-                </Card.Text>               
-              </Card.Body>
-            </Card>
-           </Col>       
-            <Col>
-              <h3 className="text-info" style={{ textAlign: 'center'}}>
-                OUR MISSION
-              </h3>
-            </Col>   
-          </Row>
-        <hr width="100%" />
+        <Row>
+          <Col md={{span: 4, offset: 4}}>
+        <Card
+          style={{
+            width: "18rem",
+            marginLeft: "50px",
+            textAlign: "center",
+            border: "none"
+          }}
+        >
+          <Card.Body>
+            <Card.Title>Absence</Card.Title>
+            <Card.Img variant="top" img src={absence} alt="absence" />
+            <Card.Text>
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </Card.Text>
+          </Card.Body>
+        </Card>
+        </Col>
+        </Row>
 
-        
-          <Row>
-            <Col>
-              <h3 className="text-danger" style={{ textAlign:'center'}}>
-              OUR PRODUCT
-              </h3>
-              </Col>       
-            <Col style={{ textAlign: 'center'}}>
-            <Card style={{ width: '100%' }}>
-              <Card.Body>                
-                <Card.Text>
-                To be the best and most reliable Toyota Dealer in Indonesia through world class processes
-                </Card.Text>               
-              </Card.Body>
-            </Card>
-            </Col>          
-          </Row>
-        
-        <hr width="100%" />
-
-
-          <Row>        
-            <Col style={{ textAlign: 'center'}}>
-            <Card style={{ width: '100%' }}>
-              <Card.Body>                
-                <Card.Text>
-                To be the best and most reliable Toyota Dealer in Indonesia through world class processes
-                </Card.Text>               
-              </Card.Body>
-            </Card>
-            </Col>     
-            <Col>
-              <h3 className="text-info" style={{ textAlign: 'center'}}>
-                OUR SERVICES
-              </h3>
-            </Col>          
-          </Row>
-
-        <hr width="100%" />
-
-        
-          <Row>        
-            <Col>
-              <h3 className="text-danger" style={{ textAlign: 'center'}}>
-              OUR AWARD
-              </h3>
-            </Col>       
-            <Col style={{ textAlign: 'center'}}>
-            <Card style={{ width: '100%' }}>
-              <Card.Body>                
-                <Card.Text>
-                To be the best and most reliable Toyota Dealer in Indonesia through world class processes
-                </Card.Text>               
-              </Card.Body>
-            </Card>
-            </Col>          
-          </Row>
-        
-        <hr width="100%" />
+        <Row>
+          <Col md={{span: 4, offset: 8}}>
+        <Card
+          style={{
+            width: "18rem",
+            marginLeft: "50px",
+            textAlign: "center",
+            border: "none"
+          }}
+        >
+          <Card.Body>
+            <Card.Title>Report</Card.Title>
+            <Card.Img variant="top" img src={report} alt="report" />
+            <Card.Text>
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </Card.Text>
+          </Card.Body>
+        </Card>
+        </Col>
+        </Row>         
       </Container>
       </>
   );

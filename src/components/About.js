@@ -16,13 +16,13 @@ export default function About() {
       <div style={{ textAlign: "center", marginBottom: "30px" }}>
         <h3>Company History</h3>
         <p style={{ width: "80%", margin: "0px auto" }}>
-          Bermuda Motors adalah jaringan jasa penjualan, perawatan,
-          perbaikan dan penyediaan suku cadang ottomotif yang berdiri sejak tahun 2019.
-          Saat ini BermudaMotors adalah retailer otomotif terbesar di Indonesia.
-          Kedepannya jumlah jaringan BermudaMotors pun akan terus bertambah seiring dengan pertumbuhan bisnis,
-          serta untuk memenuhi kebutuhan seluruh pelanggan. Sesuai dengan slogan-nya “Urusan Otomotif Lebih Mudah!”,
-          Bermuda Motors senantiasa berupaya memberikan pelayanan yang terbaik bagi seluruh pelanggannya
-          dalam membeli dan memiliki kendaraan.
+          Bermuda Motors is a network of sales, maintenance,
+          repair and supply of automotive parts which were established in 2019.
+          Currently BermudaMotors is the largest automotive retailer in Indonesia.
+          In the future the number of BermudaMotors' networks will continue to grow along with business growth,
+          and to meet the needs of all customers. In accordance with its slogan "Easier Automotive Affairs!",
+          Bermuda Motors is always trying to provide the best service for all customers
+          in buying and owning a vehicle.
         </p>
       </div>
       <hr width="100%" />
