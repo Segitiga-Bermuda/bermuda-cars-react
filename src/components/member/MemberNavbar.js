@@ -25,7 +25,6 @@ class MemberNavbar extends Component {
       return (
         <div>
           <Navbar
-            fixed="top"
             collapseOnSelect
             expand="lg"
             variant="dark"
@@ -79,7 +78,6 @@ class MemberNavbar extends Component {
       return (
         <div>
           <Navbar
-            fixed="top"
             collapseOnSelect
             expand="lg"
             variant="dark"
