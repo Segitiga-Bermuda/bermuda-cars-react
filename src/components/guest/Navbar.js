@@ -10,7 +10,7 @@ const Team = () => {
         collapseOnSelect
         expand="lg"
         variant="dark"
-        style={{ backgroundColor: "#183BF0" }}
+        className="fixed-top"
       >
         <Container>
           <Navbar.Brand>

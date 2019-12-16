@@ -29,6 +29,7 @@ class MemberNavbar extends Component {
             expand="lg"
             variant="dark"
             style={{ backgroundColor: "#183BF0" }}
+            className="fixed-top"
           >
             <Container>
               <Navbar.Brand>
@@ -82,6 +83,7 @@ class MemberNavbar extends Component {
             expand="lg"
             variant="dark"
             style={{ backgroundColor: "#183BF0" }}
+            className="fixed-top"
           >
             <Container>
               <Navbar.Brand>

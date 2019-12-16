@@ -41,15 +41,16 @@ class Login extends Component {
         title: "Field is empty",
         text: "Please fill all field",
         icon: "error"
-      });
-      return null;
+      })
+
+      return null
     }
     if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(this.state.email)) {
       Swal.fire({
         title: "Email Format Is Wrong",
         text: "Please fill email field again",
         icon: "error"
-      });
+      })
       return null;
     }
     let path = process.env.REACT_APP_API;

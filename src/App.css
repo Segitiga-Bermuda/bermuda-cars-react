@@ -46,10 +46,9 @@
 }
 
 .bgtext > .bgimg {
-  width: 80%;
+  width: 75%;
   height: 300px;
-  background-color: rgba(128, 128, 128, 0.75);
-  margin: 0px auto;
+  margin: 76px auto;
   display: block;
 }
 .bgimg {
@@ -60,8 +59,151 @@
 .navbar-brand {
   padding: 0 !important;
 }
-@media only screen and (max-width: 760px) {
-  .jumbotron {
-    display: none;
+
+.navbar {
+  background-color: rgba(24, 59, 240, 0.75) !important;
+}
+
+p {
+  font-family: 'Noto Sans JP';
+  margin-top: 25px !important;
+  margin-bottom: 25px !important;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.jumbotron {
+  margin: 0 !important;
+}
+
+.card {
+  background-color: rgba(225, 225, 225, 0.75);
+}
+
+.division .card-title {
+  color: #3F51B5;
+  font-family: 'Russo One';
+}
+
+.card-text {
+  font-family: 'Rubik';
+  margin: 10px !important;
+}
+
+.navbar-brand {
+  font-weight: 700 !important;
+}
+
+.nav-link {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+}
+
+footer {
+  background-image: url(/assets/images/footer-bg.jpg) !important;
+  padding: 100px 0;
+}
+
+footer > .row > div:nth-child(1) {
+  box-sizing: border-box;
+  padding: 0 50px !important;
+}
+
+footer .brand {
+  height: auto;
+  width: 40px;
+}
+
+footer .nav-link,
+.copyright {
+  color: #47797d !important;
+  font-size: 12px !important;
+}
+
+footer hr {
+  border-color: #808080;
+  border-width: 2px;
+}
+
+.copyright {
+  font-size: 16px !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-align: center;
+}
+
+footer .bg-dark {
+  background-color: transparent !important;
+}
+
+footer {
+  background-image: url(./assets/images/footer-bg.jpg) !important;
+  padding: 100px 0;
+}
+
+footer h3,
+footer h5 {
+  color: #ffffff
+}
+
+.desc {
+  width: 80%;
+}
+
+.what-we-did {
+  margin: 50px 0;
+}
+
+.what-we-did img:hover {
+  background-color: #005050;
+  cursor: pointer;
+  transform: scale(1.25);
+}
+
+.what-we-did img {
+  height: auto;
+  margin: 25px auto;
+  width: 90%;
+}
+
+.what-we-did h1 {
+  color: #455a64;
+  font-weight: 900;
+}
+
+.what-we-did button {
+  background-color: #0ceac5;
+  border-radius: 25px;
+  border: none;
+  height: 50px;
+  width: 150px;
+}
+
+.what-we-did img:hover {
+  background-color: #005050;
+  cursor: pointer;
+  transform: scale(1.25);
+}
+
+.gallery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 575px) {
+  footer .brand {
+    height: 25px;
+    width: auto;
+  }
+
+  .desc {
+    width: 100%;
   }
 }

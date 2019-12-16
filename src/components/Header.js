@@ -1,25 +1,35 @@
-import React, { Component } from "react";
-import { Jumbotron } from "react-bootstrap";
-import Car from "../assets/images/car.jpg";
-import Logo from "../assets/images/logo.png";
-import "../App.css";
+import React, { Component } from 'react'
+import {
+  Image
+} from 'react-bootstrap'
+import Car from '../assets/images/car.jpg'
+import Logo from '../assets/images/logo.png'
+import '../App.css'
+import { Parallax } from 'react-parallax'
 
 export default class Header extends Component {
   render() {
     return (
-      <Jumbotron
+      <Parallax
+        bgImage={Car}
+        bgImageAlt="Bermuda Cars"
+        strength={1000}
         style={{
-          backgroundImage: `url(${Car})`,
-          minHeight: window.innerHeight - 40 + "px",
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat"
+          minHeight: window.innerHeight + 'px',
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat'
         }}
       >
         <div className="bgtext">
-          <img src={Logo} alt="logo" className="bgimg" />
+          <Image
+            fluid={true}
+            src={Logo}
+            alt="logo"
+            className="bgimg"
+          />
         </div>
-      </Jumbotron>
-    );
+      </Parallax>
+    )
   }
 }
