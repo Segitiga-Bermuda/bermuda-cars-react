@@ -65,7 +65,7 @@
 }
 
 p {
-  font-family: 'Noto Sans JP';
+  font-family: "Noto Sans JP";
   margin-top: 25px !important;
   margin-bottom: 25px !important;
   padding: 10px;
@@ -81,12 +81,12 @@ p {
 }
 
 .division .card-title {
-  color: #3F51B5;
-  font-family: 'Russo One';
+  color: #3f51b5;
+  font-family: "Russo One";
 }
 
 .card-text {
-  font-family: 'Rubik';
+  font-family: "Rubik";
   margin: 10px !important;
 }
 
@@ -149,7 +149,7 @@ footer {
 
 footer h3,
 footer h5 {
-  color: #ffffff
+  color: #ffffff;
 }
 
 .desc {
@@ -206,4 +206,23 @@ footer h5 {
   .desc {
     width: 100%;
   }
+}
+
+.table td {
+  padding: 0;
+}
+
+.carousel {
+  width: 30%;
+  height: "50px";
+  margin: 0px auto;
+}
+
+.carousel p {
+  text-align: center;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  background-color: black;
 }
