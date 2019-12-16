@@ -5,6 +5,11 @@ import economy from "../assets/images/economy.png";
 import absence from "../assets/images/absence.png";
 import report from "../assets/images/report.png";
 import audia5 from "../assets/images/audia5.png";
+import audi from "../assets/images/audi.png";
+import cooper from "../assets/images/cooper.png";
+import jaguar from "../assets/images/jaguar.png";
+import porsche from "../assets/images/porsche.png";
+import mercy from "../assets/images/mercy.png";
 
 export default function About() {
   return (
@@ -24,7 +29,7 @@ export default function About() {
       <br />
 
       <Row>
-            <Col md={{span: 4}}>
+            <Col md={{span: 4}}> 
       <Card
           style={{
             width: "18rem",
@@ -46,10 +51,16 @@ export default function About() {
         <Col md={{span: 4}}>
           <Image thumbnail src={audia5} alt="Car" style={{width: '100%', height: 'auto'}} />
         </Col>
+        <Col md={{span: 4}}>
+          <Image thumbnail src={audi} alt="Car" style={{width: '100%', height: 'auto'}} />
+        </Col>
         </Row>
 
         <Row>
-          <Col md={{span: 4, offset: 4}}>
+        <Col md={{span: 4}}>
+          <Image thumbnail src={cooper} alt="Car" style={{width: '100%', height: 'auto'}} />
+        </Col>
+          <Col md={{span: 4, offset: 0}}>
         <Card
           style={{
             width: "18rem",
@@ -57,7 +68,7 @@ export default function About() {
             textAlign: "center",
             border: "none"
           }}
-        >
+        >          
           <Card.Body>
             <Card.Title>Absence</Card.Title>
             <Card.Img variant="top" img src={absence} alt="absence" />
@@ -68,10 +79,19 @@ export default function About() {
           </Card.Body>
         </Card>
         </Col>
+        <Col md={{span: 4}}>
+          <Image thumbnail src={jaguar} alt="Car" style={{width: '100%', height: 'auto'}} />
+        </Col>
         </Row>
 
         <Row>
-          <Col md={{span: 4, offset: 8}}>
+        <Col md={{span: 4}}>
+          <Image thumbnail src={porsche} alt="Car" style={{width: '100%', height: 'auto'}} />
+        </Col>
+        <Col md={{span: 4}}>
+          <Image thumbnail src={mercy} alt="Car" style={{width: '100%', height: 'auto'}} />
+        </Col>
+          <Col md={{span: 4, offset: 0}}>
         <Card
           style={{
             width: "18rem",
