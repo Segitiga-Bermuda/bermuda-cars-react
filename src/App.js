@@ -11,7 +11,9 @@ import {
   Contact,
   Register2,
   Dashboard,
-  Absen
+  Absen,
+  ChartLine,
+  ChartPie
 } from "./components";
 import "./App.css";
 
@@ -50,6 +52,12 @@ const App = () => {
           </Route>
           <Route path="/absen" exact={true}>
             <Absen />
+          </Route>
+          <Route path="/pie" exact={true}>
+            <ChartPie />
+          </Route>
+          <Route path="/line" exact={true}>
+            <ChartLine />
           </Route>
         </Switch>
       </div>

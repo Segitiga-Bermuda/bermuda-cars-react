@@ -9,3 +9,5 @@ export { default as Contact } from "./Contact";
 export { default as Feature } from "./Feature";
 export { default as Dashboard } from "./Dashboard";
 export { default as Absen } from "./Absen";
+export { default as ChartPie } from "./Pie";
+export { default as ChartLine } from "./Line";

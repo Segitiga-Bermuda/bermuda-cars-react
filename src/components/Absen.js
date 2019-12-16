@@ -7,7 +7,14 @@ export default class Absen extends Component {
   render() {
     return (
       <div>
-        <Table striped bordered hover style={{ marginTop: "100px" }}>
+        <Table
+          responsive
+          striped
+          bordered
+          hover
+          size="sm"
+          style={{ marginTop: "100px" }}
+        >
           <thead>
             <tr>
               <td colSpan="3"></td>
