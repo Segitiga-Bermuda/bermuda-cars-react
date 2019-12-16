@@ -10,12 +10,12 @@ import {
   Form,
   FormGroup
 } from "react-bootstrap"
-import { Link, withRouter } from "react-router-dom"
+import { withRouter } from "react-router-dom"
 import background from "../assets/images/background/bg2.jpg"
 import DayPickerInput from "react-day-picker/DayPickerInput"
 import Swal from 'sweetalert2'
 import { AXIOS } from '../helpers'
-import "react-day-picker/lib/style.css";
+import "react-day-picker/lib/style.css"
 
 class Register extends Component {
   constructor(props) {
@@ -47,7 +47,9 @@ class Register extends Component {
 
   handleDayChange(selectedDay, modifiers, DayPickerInput) {
     let born = new Date(selectedDay),
-      born2 = new Date(born.getUTCFullYear() + '-' + (born.getUTCMonth() + 1) + '-' + born.getUTCDate())
+      born2 = new Date(born.getUTCFullYear() +
+        '-' + (born.getUTCMonth() + 1) +
+        '-' + born.getUTCDate())
 
     this.setState({
       born: born2
@@ -83,9 +85,9 @@ class Register extends Component {
         title: 'Field is empty',
         text: 'Please fill all field',
         icon: 'error'
-      });
+      })
 
-      return null;
+      return null
     }
 
     if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(this.state.email)) {
@@ -95,12 +97,11 @@ class Register extends Component {
         icon: 'error'
       })
 
-      return null;
+      return null
     }
 
     let path = process.env.REACT_APP_API + '/admins/add-new-account'
 
-    console.log(path)
     AXIOS()
       .post(path, this.state)
       .then(result => {
@@ -141,29 +142,32 @@ class Register extends Component {
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          minHeight: window.innerHeight - 40 + "px",
-          padding: "0",
-          width: "100%"
+          minHeight: window.innerHeight + "px",
+          padding: "0"
         }}
       >
-        <Row>
-          <Col md={{ span: 6, offset: 3 }}>
-            <Row
-              style={{
-                display: "flex",
-                minHeight: window.innerHeight - 40 + "px",
-                alignItems: "center"
-              }}
-            >
-              <Col xs={{ span: 12 }}>
-                <Row
-                  style={{
-                    backgroundColor: "rgba(212, 218, 247, 0.5)",
-                    borderRadius: "20px"
-                  }}
-                >
+        <Row className="forms">
+          <Col md={{
+            span: 6,
+            offset: 3
+          }}>
+            <Row style={{
+              display: "flex",
+              minHeight: window.innerHeight + "px",
+              alignItems: "center"
+            }}>
+              <Col xs={{
+                span: 12
+              }}>
+                <Row style={{
+                  backgroundColor: "rgba(212, 218, 247, 0.5)",
+                  borderRadius: "20px"
+                }}>
                   <Col
-                    xs={{ span: 12, order: 1 }}
+                    xs={{
+                      span: 12,
+                      order: 1
+                    }}
                     style={{
                       backgroundColor: "#183bf0",
                       boxSizing: "border-box",
@@ -178,8 +182,14 @@ class Register extends Component {
                     Create Account
                   </Col>
                   <Col
-                    md={{ span: 6, order: 2 }}
-                    xs={{ span: 12, order: 2 }}
+                    md={{
+                      span: 6,
+                      order: 2
+                    }}
+                    xs={{
+                      span: 12,
+                      order: 2
+                    }}
                     style={{
                       display: "flex",
                       alignItems: "center",
@@ -188,7 +198,7 @@ class Register extends Component {
                     }}
                   >
                     <Image
-                      roundedCircle
+                      roundedCircle={true}
                       src={Profile}
                       alt="profile"
                       style={{
@@ -199,8 +209,14 @@ class Register extends Component {
                     />
                   </Col>
                   <Col
-                    md={{ span: 6, order: 3 }}
-                    xs={{ span: 12, order: 3 }}
+                    md={{
+                      span: 6,
+                      order: 3
+                    }}
+                    xs={{
+                      span: 12,
+                      order: 3
+                    }}
                     style={{
                       boxSizing: "border-box",
                       padding: "20px",
@@ -306,10 +322,22 @@ class Register extends Component {
                         />
                       </FormGroup>
                       <FormGroup>
-                        <FormControl as="select" name="role" id="role" value={this.state.role} onChange={this.handleChange}>
-                          <option value="Admin">Admin</option>
-                          <option value="Executive">Executive</option>
-                          <option value="Employer">Employer</option>
+                        <FormControl
+                          as="select"
+                          name="role"
+                          id="role"
+                          value={this.state.role}
+                          onChange={this.handleChange}
+                        >
+                          <option value="Admin">
+                            Admin
+                          </option>
+                          <option value="Executive">
+                            Executive
+                          </option>
+                          <option value="Employer">
+                            Employer
+                          </option>
                         </FormControl>
                       </FormGroup>
                       <FormGroup>
@@ -334,8 +362,8 @@ class Register extends Component {
           </Col>
         </Row>
       </Container>
-    );
+    )
   }
 }
 
-export default withRouter(Register);
+export default withRouter(Register)

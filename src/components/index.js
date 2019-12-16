@@ -7,4 +7,5 @@ export { default as Logout } from "./Logout";
 export { default as Navigation } from "./Navigation";
 export { default as Contact } from "./Contact";
 export { default as Feature } from "./Feature";
-export { default as Dasboard } from "./Dasboard";
+export { default as Dashboard } from "./Dashboard";
+export { default as Absen } from "./Absen";

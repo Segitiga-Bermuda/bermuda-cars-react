@@ -10,7 +10,8 @@ import {
   Feature,
   Contact,
   Register2,
-  Dasboard
+  Dashboard,
+  Absen
 } from "./components";
 import "./App.css";
 
@@ -29,10 +30,10 @@ const App = () => {
           <Route path="/log-in" exact={true}>
             <Login />
           </Route>
-          <Route path="/user/register">
+          <Route path="/user/register" exact={true}>
             <Register2 />
           </Route>
-          <Route path="/company/register">
+          <Route path="/company/register" exact={true}>
             <Register />
           </Route>
           <Route path="/log-out" exact={true}>
@@ -44,8 +45,11 @@ const App = () => {
           <Route path="/features" exact={true}>
             <Feature />
           </Route>
-          <Route path="/dasboard" exact={true}>
-            <Dasboard />
+          <Route path="/dashboard" exact={true}>
+            <Dashboard />
+          </Route>
+          <Route path="/absen" exact={true}>
+            <Absen />
           </Route>
         </Switch>
       </div>

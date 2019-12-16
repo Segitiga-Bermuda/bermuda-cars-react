@@ -1,5 +1,5 @@
-import React, { Component } from "react"
-import Profile from "../assets/images/teamwork.png"
+import React, { Component } from 'react'
+import Profile from '../assets/images/teamwork.png'
 import {
   Col,
   Row,
@@ -9,14 +9,13 @@ import {
   FormControl,
   Form,
   FormGroup
-} from "react-bootstrap"
-import { Link, withRouter } from "react-router-dom"
-import background from "../assets/images/background/bg2.jpg"
-import DayPickerInput from "react-day-picker/DayPickerInput"
+} from 'react-bootstrap'
+import { Link, withRouter } from 'react-router-dom'
+import background from '../assets/images/background/bg2.jpg'
+import DayPickerInput from 'react-day-picker/DayPickerInput'
 import Swal from 'sweetalert2'
 import axios from 'axios'
-
-import "react-day-picker/lib/style.css";
+import 'react-day-picker/lib/style.css'
 
 class Register2 extends Component {
   constructor(props) {
@@ -71,7 +70,7 @@ class Register2 extends Component {
         title: 'Email Format Is Wrong',
         text: 'Please fill email field again',
         icon: 'error'
-      });
+      })
 
       return null;
     }
@@ -87,10 +86,11 @@ class Register2 extends Component {
             icon: 'error'
           })
         } else {
-          Swal.fire({
-            title: 'Success Create Account',
-            icon: 'success'
-          })
+          Swal
+            .fire({
+              title: 'Success Create Account',
+              icon: 'success'
+            })
             .then(decision => {
               this.props.history.push('/log-in')
             })
@@ -103,7 +103,9 @@ class Register2 extends Component {
 
   handleDayChange(selectedDay, modifiers, DayPickerInput) {
     let born = new Date(selectedDay),
-      born2 = new Date(born.getUTCFullYear() + '-' + (born.getUTCMonth() + 1) + '-' + born.getUTCDate())
+      born2 = new Date(born.getUTCFullYear() +
+        '-' + (born.getUTCMonth() + 1) +
+        '-' + born.getUTCDate())
 
     this.setState({
       born: born2
@@ -127,29 +129,32 @@ class Register2 extends Component {
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          minHeight: window.innerHeight - 40 + "px",
-          padding: "0",
-          width: "100%"
+          minHeight: window.innerHeight + "px",
+          padding: "0"
         }}
       >
-        <Row>
-          <Col md={{ span: 6, offset: 3 }}>
-            <Row
-              style={{
-                display: "flex",
-                minHeight: window.innerHeight - 40 + "px",
-                alignItems: "center"
-              }}
-            >
-              <Col xs={{ span: 12 }}>
-                <Row
-                  style={{
-                    backgroundColor: "rgba(212, 218, 247, 0.5)",
-                    borderRadius: "20px"
-                  }}
-                >
+        <Row className="forms">
+          <Col md={{
+            span: 6,
+            offset: 3
+          }}>
+            <Row style={{
+              display: "flex",
+              minHeight: window.innerHeight + "px",
+              alignItems: "center"
+            }}>
+              <Col xs={{
+                span: 12
+              }}>
+                <Row style={{
+                  backgroundColor: "rgba(212, 218, 247, 0.5)",
+                  borderRadius: "20px"
+                }}>
                   <Col
-                    xs={{ span: 12, order: 1 }}
+                    xs={{
+                      span: 12,
+                      order: 1
+                    }}
                     style={{
                       backgroundColor: "#183bf0",
                       boxSizing: "border-box",
@@ -164,8 +169,14 @@ class Register2 extends Component {
                     Create Account
                   </Col>
                   <Col
-                    md={{ span: 6, order: 2 }}
-                    xs={{ span: 12, order: 2 }}
+                    md={{
+                      span: 6,
+                      order: 2
+                    }}
+                    xs={{
+                      span: 12,
+                      order: 2
+                    }}
                     style={{
                       display: "flex",
                       alignItems: "center",
@@ -174,7 +185,7 @@ class Register2 extends Component {
                     }}
                   >
                     <Image
-                      roundedCircle
+                      roundedCircle={true}
                       src={Profile}
                       alt="profile"
                       style={{
@@ -185,8 +196,14 @@ class Register2 extends Component {
                     />
                   </Col>
                   <Col
-                    md={{ span: 6, order: 3 }}
-                    xs={{ span: 12, order: 3 }}
+                    md={{
+                      span: 6,
+                      order: 3
+                    }}
+                    xs={{
+                      span: 12,
+                      order: 3
+                    }}
                     style={{
                       boxSizing: "border-box",
                       padding: "20px",
@@ -215,7 +232,9 @@ class Register2 extends Component {
                         />
                       </FormGroup>
                       <FormGroup>
-                        <Col style={{ textAlign: "center" }}>
+                        <Col style={{
+                          textAlign: "center"
+                        }}>
                           <Form.Check
                             custom
                             inline
@@ -275,11 +294,9 @@ class Register2 extends Component {
                           Sign Up
                         </Button>
                       </FormGroup>
-                      <FormGroup
-                        style={{
-                          backgroundColor: "white"
-                        }}
-                      >
+                      <FormGroup style={{
+                        backgroundColor: "white"
+                      }}>
                         <p
                           style={{
                             boxSizing: "border-box",
@@ -288,7 +305,9 @@ class Register2 extends Component {
                           }}
                         >
                           Already have an account?&nbsp;
-                          <Link to="/log-in">Log in</Link>
+                          <Link to="/log-in">
+                            Click this link.
+                          </Link>
                         </p>
                       </FormGroup>
                     </Form>
@@ -299,8 +318,8 @@ class Register2 extends Component {
           </Col>
         </Row>
       </Container>
-    );
+    )
   }
 }
 
-export default withRouter(Register2);
+export default withRouter(Register2)

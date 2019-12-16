@@ -38,6 +38,7 @@ export default function Contact() {
         backgroundPosition: 'center',
         backgroundSize: 'cover'
       }}>
+        <hr width="100%" />
         <h2
           className="display-3 text-success"
           style={{
@@ -47,6 +48,7 @@ export default function Contact() {
         >
           Contacts
         </h2>
+        <hr width="50%" />
         <Row style={{
           boxSizing: 'border-box',
           padding: '25px'
@@ -97,7 +99,7 @@ export default function Contact() {
                     <EmailIcon />
                   </Avatar>
                 </ListItemAvatar>
-                <ListItemText primary="company@gmail.com" />
+                <ListItemText primary="bermuda.motors@gmail.com" />
               </ListItem>
             </List>
           </Col>
