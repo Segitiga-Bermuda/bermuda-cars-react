@@ -1,5 +1,5 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import React from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import {
   Navigation,
   Home,
@@ -10,9 +10,9 @@ import {
   Feature,
   Contact,
   Register2,
-  Dasboard
-} from "./components";
-import "./App.css";
+  Dashboard
+} from './components'
+import './App.css'
 
 const App = () => {
   return (
@@ -20,37 +20,64 @@ const App = () => {
       <div>
         <Navigation />
         <Switch>
-          <Route path="/" exact={true}>
+          <Route
+            path="/"
+            exact={true}
+          >
             <Home />
           </Route>
-          <Route path="/about" exact={true}>
+          <Route
+            path="/about"
+            exact={true}
+          >
             <About />
           </Route>
-          <Route path="/log-in" exact={true}>
+          <Route
+            path="/log-in"
+            exact={true}
+          >
             <Login />
           </Route>
-          <Route path="/user/register">
+          <Route
+            path="/user/register"
+            exact={true}
+          >
             <Register2 />
           </Route>
-          <Route path="/company/register">
+          <Route
+            path="/company/register"
+            exact={true}
+          >
             <Register />
           </Route>
-          <Route path="/log-out" exact={true}>
+          <Route
+            path="/log-out"
+            exact={true}
+          >
             <Logout />
           </Route>
-          <Route path="/contacts" exact={true}>
+          <Route
+            path="/contacts"
+            exact={true}
+          >
             <Contact />
           </Route>
-          <Route path="/features" exact={true}>
+          <Route
+            path="/features"
+            exact={true}
+          >
             <Feature />
           </Route>
-          <Route path="/dasboard" exact={true}>
-            <Dasboard />
+          <Route
+            path="/dashboard"
+            exact={true}
+          >
+            <Dashboard />
           </Route>
         </Switch>
       </div>
     </Router>
-  );
-};
+  )
+}
 
-export default App;
+export default App
