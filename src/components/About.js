@@ -121,7 +121,9 @@ export default function About() {
             }}>
               <Card.Body>
                 <Card.Text>
-                  To be the best and most reliable Toyota Dealer in Indonesia through world class processes
+                <p>1. Give more attention to customers both in terms of service facilities</p>
+                <p>2. Provides all the flexibility to purchase and have things</p>
+                <p>3. Providing convenience, comfort and safety for customers to get the best solutions in automotive</p>
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -187,7 +189,10 @@ export default function About() {
             }}>
               <Card.Body>
                 <Card.Text>
-                  To be the best and most reliable Toyota Dealer in Indonesia through world class processes
+                <p>1. Car</p>
+                <p>2. Car Sport</p>
+                <p>3. Motorcycle</p>
+                <p>4. SUV</p>
                   </Card.Text>
               </Card.Body>
             </Card>
@@ -213,8 +218,11 @@ export default function About() {
             }}>
               <Card.Body>
                 <Card.Text>
-                  To be the best and most reliable Toyota Dealer in Indonesia through world class processes
-                  </Card.Text>
+                <p>1. Services</p>
+                <p>2. Maintenance</p>
+                <p>3. Booking Online</p>
+                <p>4. Test Drive</p>
+                </Card.Text>
               </Card.Body>
             </Card>
           </Col>
@@ -279,7 +287,9 @@ export default function About() {
             }}>
               <Card.Body>
                 <Card.Text>
-                  To be the best and most reliable Toyota Dealer in Indonesia through world class processes
+                <p>1. Top Brands</p>
+                <p>2. Best Brands</p>
+                <p>3. Super Brands</p>                
                 </Card.Text>
               </Card.Body>
             </Card>
