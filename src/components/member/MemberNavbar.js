@@ -1,70 +1,83 @@
-import React, { Component } from "react";
-import { Nav, Navbar, Container, Button } from "react-bootstrap";
-import Navlogo from "../../assets/images/logonav.png";
-import { Link as Link2, withRouter } from "react-router-dom";
-import { AXIOS, verify } from "../../helpers";
+import React, { Component } from 'react'
+import {
+  Nav,
+  Navbar,
+  Container
+} from 'react-bootstrap'
+import Navlogo from '../../assets/images/logonav.png'
+import {
+  Link as Link2,
+  withRouter
+} from 'react-router-dom'
+import {
+  verify
+} from '../../helpers'
 
 class MemberNavbar extends Component {
   constructor(props) {
-    super(props);
+    super(props)
+
     this.state = {
       user: verify() || {}
-    };
+    }
 
-    this.logOut = this.logOut.bind(this);
+    this.logOut = this.logOut.bind(this)
   }
 
   logOut() {
-    localStorage.removeItem("token");
+    localStorage.removeItem('token')
 
-    this.props.history.push("/log-in");
+    this.props.history.push('/log-in')
   }
 
   render() {
-    if (this.state.user.role === "Admin") {
+    if (this.state.user.role === 'Admin') {
       return (
         <div>
           <Navbar
             collapseOnSelect
             expand="lg"
             variant="dark"
-            style={{ backgroundColor: "#183BF0" }}
             className="fixed-top"
           >
             <Container>
               <Navbar.Brand>
-                <img src={Navlogo} alt="navlogo" width="auto" height="60px" />
+                <img
+                  src={Navlogo}
+                  alt="navlogo"
+                  width="auto"
+                  height="60px"
+                />
               </Navbar.Brand>
               <Navbar.Toggle aria-controls="responsive-navbar-nav" />
               <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="ml-auto navnama">
                   <Link2
-                    className="nav-link"
-                    to="/dasboard"
+                    to="/dashboard"
                     style={{
-                      color: "white",
-                      textDecoration: "none"
+                      color: '#ffffff',
+                      textDecoration: 'none'
                     }}
+                    className="nav-link"
                   >
                     Dashboard
                   </Link2>
                   <Link2
-                    className="nav-link"
                     to="/company/register"
                     style={{
-                      color: "white",
-                      textDecoration: "none"
+                      color: '#ffffff',
+                      textDecoration: 'none'
                     }}
+                    className="nav-link"
                   >
                     Company Register
                   </Link2>
                   <Nav.Link
                     href="#"
                     style={{
-                      color: "white",
-                      textDecoration: "none"
+                      color: '#ffffff',
+                      textDecoration: 'none'
                     }}
-                    className="nav-link"
                     onClick={this.logOut}
                   >
                     Log Out
@@ -74,7 +87,7 @@ class MemberNavbar extends Component {
             </Container>
           </Navbar>
         </div>
-      );
+      )
     } else {
       return (
         <div>
@@ -82,33 +95,36 @@ class MemberNavbar extends Component {
             collapseOnSelect
             expand="lg"
             variant="dark"
-            style={{ backgroundColor: "#183BF0" }}
             className="fixed-top"
           >
             <Container>
               <Navbar.Brand>
-                <img src={Navlogo} alt="navlogo" width="auto" height="60px" />
+                <img
+                  src={Navlogo}
+                  alt="navlogo"
+                  width="auto"
+                  height="60px"
+                />
               </Navbar.Brand>
               <Navbar.Toggle aria-controls="responsive-navbar-nav" />
               <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="ml-auto navnama">
                   <Link2
-                    className="nav-link"
-                    to="/dasboard"
+                    to="/dashboard"
                     style={{
-                      color: "white",
-                      textDecoration: "none"
+                      color: '#ffffff',
+                      textDecoration: 'none'
                     }}
+                    className="nav-link"
                   >
                     Dashboard
                   </Link2>
                   <Nav.Link
                     href="#"
                     style={{
-                      color: "white",
-                      textDecoration: "none"
+                      color: '#ffffff',
+                      textDecoration: 'none'
                     }}
-                    className="nav-link"
                     onClick={this.logOut}
                   >
                     Log Out
@@ -118,9 +134,9 @@ class MemberNavbar extends Component {
             </Container>
           </Navbar>
         </div>
-      );
+      )
     }
   }
 }
 
-export default withRouter(MemberNavbar);
+export default withRouter(MemberNavbar)

@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import axios from "axios";
-import Profile from "../assets/images/teamwork.png";
+import React, { Component } from "react"
+import axios from "axios"
+import Profile from "../assets/images/teamwork.png"
 import {
   Col,
   Row,
@@ -10,31 +10,38 @@ import {
   FormControl,
   Form,
   FormGroup
-} from "react-bootstrap";
-import { Link, withRouter } from "react-router-dom";
-import background from "../assets/images/background/bg1.jpg";
-import Swal from "sweetalert2";
+} from "react-bootstrap"
+import {
+  Link,
+  withRouter
+} from "react-router-dom"
+import background from "../assets/images/background/bg1.jpg"
+import Swal from "sweetalert2"
 
 class Login extends Component {
   constructor(props) {
-    super(props);
+    super(props)
+
     this.state = {
       email: "",
       password: "",
       role: "User"
-    };
-    this.handleChange = this.handleChange.bind(this);
-    this.submitForm = this.submitForm.bind(this);
+    }
+
+    this.handleChange = this.handleChange.bind(this)
+    this.submitForm = this.submitForm.bind(this)
   }
+
   handleChange(e) {
-    let val = e.target.value;
+    let val = e.target.value
 
     this.setState({
       [e.target.name]: val
-    });
+    })
   }
+
   submitForm(e) {
-    e.preventDefault();
+    e.preventDefault()
 
     if (this.state.email === "" || this.state.password === "") {
       Swal.fire({
@@ -45,17 +52,22 @@ class Login extends Component {
 
       return null
     }
+
     if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(this.state.email)) {
       Swal.fire({
         title: "Email Format Is Wrong",
         text: "Please fill email field again",
         icon: "error"
       })
-      return null;
+
+      return null
     }
-    let path = process.env.REACT_APP_API;
+
+    let path = process.env.REACT_APP_API
+
     if (this.state.role === "Admin") {
-      path += "/admins/log-in";
+      path += "/admins/log-in"
+
       axios
         .post(path, this.state)
         .then(result => {
@@ -63,23 +75,26 @@ class Login extends Component {
             Swal.fire({
               text: result.data.message,
               icon: "error"
-            });
-            return null;
+            })
+
+            return null
           }
 
           Swal.fire({
             title: "You Will be Redirect to Dasboard Page",
             icon: "success"
           }).then(decision => {
-            localStorage.setItem("token", JSON.stringify(result.data.token));
-            this.props.history.push("/dasboard");
-          });
+            localStorage.setItem("token", JSON.stringify(result.data.token))
+
+            this.props.history.push("/dashboard")
+          })
         })
         .catch(error => {
-          console.log(error);
-        });
+          console.log(error)
+        })
     } else if (this.state.role === "Executive") {
-      path += "/executives/log-in";
+      path += "/executives/log-in"
+
       axios
         .post(path, this.state)
         .then(result => {
@@ -87,23 +102,25 @@ class Login extends Component {
             Swal.fire({
               text: result.data.message,
               icon: "error"
-            });
-            return null;
+            })
+
+            return null
           }
 
           Swal.fire({
-            title: "You Will be Redirect to Dasboard Page",
+            title: "You Will be Redirect to Dashboard Page",
             icon: "success"
           }).then(decision => {
-            localStorage.setItem("token", JSON.stringify(result.data.token));
-            this.props.history.push("/");
-          });
+            localStorage.setItem("token", JSON.stringify(result.data.token))
+
+            this.props.history.push("/")
+          })
         })
         .catch(error => {
-          console.log(error);
-        });
+          console.log(error)
+        })
     } else if (this.state.role === "Employer") {
-      path += "/employers/log-in";
+      path += "/employers/log-in"
       axios
         .post(path, this.state)
         .then(result => {
@@ -111,23 +128,26 @@ class Login extends Component {
             Swal.fire({
               text: result.data.message,
               icon: "error"
-            });
-            return null;
+            })
+
+            return null
           }
 
           Swal.fire({
-            title: "You Will be Redirect to Dasboard Page",
+            title: "You Will be Redirect to Dashboard Page",
             icon: "success"
           }).then(decision => {
-            localStorage.setItem("token", JSON.stringify(result.data.token));
-            this.props.history.push("/");
-          });
+            localStorage.setItem("token", JSON.stringify(result.data.token))
+
+            this.props.history.push("/")
+          })
         })
         .catch(error => {
-          console.log(error);
-        });
+          console.log(error)
+        })
     } else if (this.state.role === "User") {
-      path += "/users/log-in";
+      path += "/users/log-in"
+
       axios
         .post(path, this.state)
         .then(result => {
@@ -135,23 +155,28 @@ class Login extends Component {
             Swal.fire({
               text: result.data.message,
               icon: "error"
-            });
-            return null;
+            })
+
+            return null
           }
 
-          Swal.fire({
-            title: "You Will be Redirect to Dasboard Page",
-            icon: "success"
-          }).then(decision => {
-            localStorage.setItem("token", JSON.stringify(result.data.token));
-            this.props.history.push("/");
-          });
+          Swal
+            .fire({
+              title: "You Will be Redirect to Dashboard Page",
+              icon: "success"
+            })
+            .then(decision => {
+              localStorage.setItem("token", JSON.stringify(result.data.token))
+
+              this.props.history.push("/")
+            })
         })
         .catch(error => {
-          console.log(error);
-        });
+          console.log(error)
+        })
     }
   }
+
   render() {
     return (
       <Container
@@ -161,29 +186,32 @@ class Login extends Component {
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          minHeight: window.innerHeight - 40 + "px",
-          padding: "0",
-          width: "100%"
+          minHeight: window.innerHeight + "px",
+          padding: "0"
         }}
       >
-        <Row>
-          <Col md={{ span: 6, offset: 3 }}>
-            <Row
-              style={{
-                display: "flex",
-                minHeight: window.innerHeight - 40 + "px",
-                alignItems: "center"
-              }}
-            >
-              <Col xs={{ span: 12 }}>
-                <Row
-                  style={{
-                    backgroundColor: "rgba(212, 218, 247, 0.5)",
-                    borderRadius: "20px"
-                  }}
-                >
+        <Row className="forms">
+          <Col md={{
+            span: 6,
+            offset: 3
+          }}>
+            <Row style={{
+              display: "flex",
+              minHeight: window.innerHeight + "px",
+              alignItems: "center"
+            }}>
+              <Col xs={{
+                span: 12
+              }}>
+                <Row style={{
+                  backgroundColor: "rgba(212, 218, 247, 0.5)",
+                  borderRadius: "20px"
+                }}>
                   <Col
-                    xs={{ span: 12, order: 1 }}
+                    xs={{
+                      span: 12,
+                      order: 1
+                    }}
                     style={{
                       backgroundColor: "#183bf0",
                       boxSizing: "border-box",
@@ -198,8 +226,14 @@ class Login extends Component {
                     Login
                   </Col>
                   <Col
-                    md={{ span: 6, order: 2 }}
-                    xs={{ span: 12, order: 2 }}
+                    md={{
+                      span: 6,
+                      order: 2
+                    }}
+                    xs={{
+                      span: 12,
+                      order: 2
+                    }}
                     style={{
                       display: "flex",
                       alignItems: "center",
@@ -208,7 +242,7 @@ class Login extends Component {
                     }}
                   >
                     <Image
-                      roundedCircle
+                      roundedCircle={true}
                       src={Profile}
                       alt="profile"
                       style={{
@@ -219,8 +253,14 @@ class Login extends Component {
                     />
                   </Col>
                   <Col
-                    md={{ span: 6, order: 3 }}
-                    xs={{ span: 12, order: 3 }}
+                    md={{
+                      span: 6,
+                      order: 3
+                    }}
+                    xs={{
+                      span: 12,
+                      order: 3
+                    }}
                     style={{
                       display: "flex",
                       alignItems: "center",
@@ -284,20 +324,18 @@ class Login extends Component {
                           Sign In
                         </Button>
                       </FormGroup>
-                      <FormGroup
-                        style={{
-                          backgroundColor: "white"
-                        }}
-                      >
-                        <p
-                          style={{
-                            boxSizing: "border-box",
-                            padding: "5px 5px 2.5px 5px",
-                            textAlign: "center"
-                          }}
-                        >
+                      <FormGroup style={{
+                        backgroundColor: "white"
+                      }}>
+                        <p style={{
+                          boxSizing: "border-box",
+                          padding: "5px 5px 2.5px 5px",
+                          textAlign: "center"
+                        }}>
                           Don't have an account?&nbsp;
-                          <Link to="/user/register">Create account.</Link>
+                          <Link to="/user/register">
+                            Create one.
+                          </Link>
                         </p>
                       </FormGroup>
                     </Form>
@@ -308,8 +346,8 @@ class Login extends Component {
           </Col>
         </Row>
       </Container>
-    );
+    )
   }
 }
 
-export default withRouter(Login);
+export default withRouter(Login)

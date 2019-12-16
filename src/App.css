@@ -37,10 +37,6 @@
   }
 }
 
-.nav-link {
-  font-weight: 900;
-}
-
 .liststack {
   width: 50px;
 }
@@ -197,6 +193,63 @@ footer h5 {
   justify-content: center;
 }
 
+.gallery-2 > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-2 {
+  margin: 50px 0;
+}
+
+.gallery-2 img:hover {
+  background-color: #005050;
+  cursor: pointer;
+  transform: scale(1.25);
+}
+
+.gallery-2 img {
+  background-color: transparent;
+  border: none !important;
+  height: auto;
+  margin: 25px auto;
+  width: 90%;
+}
+
+.features .card-title {
+  color: #17a2b8;
+  font-family: "Fredoka One";
+  font-size: 2em;
+}
+
+.custom-control-label {
+  color: #183bf0;
+  font-family: "Noto Sans JP";
+  font-weight: 900;
+}
+
+.navbar {
+  padding: 0 !important;
+}
+
+.navbar-collapse .nav-link {
+  box-sizing: border-box;
+  padding: 21px 25px !important;
+  height: 76px !important;
+}
+
+.navbar-brand {
+  padding: 8px 0 !important;
+}
+
+@media only screen and (max-width: 991px) {
+  .navbar-collapse .nav-link {
+    padding: 5px 25px !important;
+    height: 34px !important;
+  }
+}
+
 @media only screen and (max-width: 575px) {
   footer .brand {
     height: 25px;
@@ -205,6 +258,10 @@ footer h5 {
 
   .desc {
     width: 100%;
+  }
+
+  .forms {
+    margin-top: 60px !important;
   }
 }
 
@@ -225,4 +282,8 @@ footer h5 {
 .carousel-control-next-icon,
 .carousel-control-prev-icon {
   background-color: black;
+}
+
+.nav-link:hover {
+  background-color: rgba(4, 39, 220, 1) !important;
 }

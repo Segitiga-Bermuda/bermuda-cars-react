@@ -5,6 +5,7 @@ import {
   Col,
   Card
 } from 'react-bootstrap'
+import TextBackground1 from '../assets/images/text-background-1.png'
 import Header from './Header'
 import Footer from './Footer'
 
@@ -12,14 +13,22 @@ export default function About() {
   return (
     <>
       <Header />
-      <Container style={{
-        marginBottom: '30px',
-        width: '100%'
-      }}>
+      <Container
+        fluid={true}
+        style={{
+          backgroundImage: `url(${TextBackground1})`,
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+          marginBottom: '30px',
+          width: '100%'
+        }}
+      >
         <div style={{
           textAlign: 'center',
           marginBottom: '30px'
         }}>
+          <hr width="100%" />
           <h2
             className="display-3 text-success"
             style={{
@@ -37,7 +46,12 @@ export default function About() {
           textAlign: 'center',
           marginBottom: '30px'
         }}>
-          <h3>
+          <h3
+            className="text-info display-4"
+            style={{
+              fontFamily: 'Aladin'
+            }}
+          >
             Company History
           </h3>
           <p style={{
@@ -51,11 +65,10 @@ export default function About() {
             and to meet the needs of all customers. In accordance with its slogan "Easier Automotive Affairs!",
             Bermuda Motors is always trying to provide the best service for all customers
             in buying and owning a vehicle.
-        </p>
+          </p>
         </div>
         <hr width="100%" />
         <br />
-
         <Row>
           <Col
             md={{
@@ -69,12 +82,13 @@ export default function About() {
             className="d-flex align-items-center justify-content-center"
           >
             <h3
-              className="text-danger"
+              className="text-danger display-4"
               style={{
+                fontFamily: 'Aladin',
                 textAlign: 'center'
               }}
             >
-              OUR VISSION
+              Our Vission
             </h3>
           </Col>
           <Col
@@ -138,12 +152,13 @@ export default function About() {
             className="d-flex align-items-center justify-content-center"
           >
             <h3
-              className="text-info"
+              className="text-info display-4"
               style={{
+                fontFamily: 'Aladin',
                 textAlign: 'center'
               }}
             >
-              OUR MISSION
+              Our Mission
             </h3>
           </Col>
         </Row>
@@ -161,12 +176,13 @@ export default function About() {
             className="d-flex align-items-center justify-content-center"
           >
             <h3
-              className="text-danger"
+              className="text-danger display-4"
               style={{
+                fontFamily: 'Aladin',
                 textAlign: 'center'
               }}
             >
-              OUR PRODUCT
+              Our Product
             </h3>
           </Col>
           <Col
@@ -230,12 +246,13 @@ export default function About() {
             className="d-flex align-items-center justify-content-center"
           >
             <h3
-              className="text-info"
+              className="text-info display-4"
               style={{
+                fontFamily: 'Aladin',
                 textAlign: 'center'
               }}
             >
-              OUR SERVICES
+              Our Services
             </h3>
           </Col>
         </Row>
@@ -253,12 +270,13 @@ export default function About() {
             className="d-flex align-items-center justify-content-center"
           >
             <h3
-              className="text-danger"
+              className="text-danger display-4"
               style={{
+                fontFamily: 'Aladin',
                 textAlign: 'center'
               }}
             >
-              OUR AWARD
+              Our Award
             </h3>
           </Col>
           <Col
