@@ -80,8 +80,10 @@ export default function About() {
                   alt="economy"
                 />
                 <Card.Text>
-                  Some quick example text to build on the card title and make up the
-                  bulk of the card's content.
+                An Income Statement or Profit and Loss Statement
+                is a part of a company's financial statements that are generated
+                in an accounting period that describes the elements of a company's income
+                and expenses so as to produce a net profit (or loss).
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -174,8 +176,7 @@ export default function About() {
                   alt="absence"
                 />
                 <Card.Text>
-                  Some quick example text to build on the card title and make up the
-                  bulk of the card's content.
+                  Attendance Report shows the attendance status for the students which are date and period specific.
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -268,8 +269,9 @@ export default function About() {
                   alt="report"
                 />
                 <Card.Text>
-                  Some quick example text to build on the card title and make up the
-                  bulk of the card's content.
+                  Sales reports are a record of sales activity over a particular period of time.
+                  These reports detail what reps have been up to, reveal whether the team is on track
+                  to meet its quota, and alert management to any potential issues.
                 </Card.Text>
               </Card.Body>
             </Card>
