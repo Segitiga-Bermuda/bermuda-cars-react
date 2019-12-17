@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import ReactFilestack from "filestack-react";
 import Grid from "@material-ui/core/Grid";
-const API_FILESTACK = process.env.REACT_APP_API_FILESTACK;
-const PickerOptions = {
-  accept: "image/*",
-  fromSources: ["local_file_system"],
-  maxSize: 1024 * 1024,
-  maxFiles: 1
-};
+// const API_FILESTACK = process.env.REACT_APP_API_FILESTACK;
+// const PickerOptions = {
+//   accept: "image/*",
+//   fromSources: ["local_file_system"],
+//   maxSize: 1024 * 1024,
+//   maxFiles: 1
+// };
 
 export default class Profile extends Component {
   constructor(props) {
