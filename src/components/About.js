@@ -135,7 +135,11 @@ export default function About() {
             }}>
               <Card.Body>
                 <Card.Text>
-                  To be the best and most reliable Toyota Dealer in Indonesia through world class processes
+                  <ol>
+                    <li>Give more attention to customers both in terms of service facilities</li>
+                    <li>Provides all the flexibility to purchase and have things</li>
+                    <li>Providing convenience, comfort and safety for customers to get the best solutions in automotive</li>
+                  </ol>                
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -203,8 +207,13 @@ export default function About() {
             }}>
               <Card.Body>
                 <Card.Text>
-                  To be the best and most reliable Toyota Dealer in Indonesia through world class processes
-                  </Card.Text>
+                  <ol>
+                    <li>Car</li>
+                    <li>Car Sport</li>
+                    <li>SUV</li>
+                    <li>MVP</li>
+                  </ol>                
+                </Card.Text>
               </Card.Body>
             </Card>
           </Col>
@@ -229,8 +238,12 @@ export default function About() {
             }}>
               <Card.Body>
                 <Card.Text>
-                  To be the best and most reliable Toyota Dealer in Indonesia through world class processes
-                  </Card.Text>
+                  <ol>
+                    <li>Services</li>
+                    <li>Maintenance</li>
+                    <li>Test Drive</li>
+                  </ol>                
+                </Card.Text>
               </Card.Body>
             </Card>
           </Col>
@@ -297,7 +310,11 @@ export default function About() {
             }}>
               <Card.Body>
                 <Card.Text>
-                  To be the best and most reliable Toyota Dealer in Indonesia through world class processes
+                  <ol>
+                    <li>Top Brands</li>
+                    <li>Best Brands</li>
+                    <li>Super Brands</li>
+                  </ol>                                
                 </Card.Text>
               </Card.Body>
             </Card>

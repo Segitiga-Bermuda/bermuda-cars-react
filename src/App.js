@@ -1,5 +1,5 @@
-import React from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import {
   Navigation,
   Home,
@@ -10,9 +10,12 @@ import {
   Feature,
   Contact,
   Register2,
-  Dashboard
-} from './components'
-import './App.css'
+  Dashboard,
+  Absen,
+  ChartLine,
+  ChartPie
+} from "./components";
+import "./App.css";
 
 const App = () => {
   return (
@@ -20,64 +23,46 @@ const App = () => {
       <div>
         <Navigation />
         <Switch>
-          <Route
-            path="/"
-            exact={true}
-          >
+          <Route path="/" exact={true}>
             <Home />
           </Route>
-          <Route
-            path="/about"
-            exact={true}
-          >
+          <Route path="/about" exact={true}>
             <About />
           </Route>
-          <Route
-            path="/log-in"
-            exact={true}
-          >
+          <Route path="/log-in" exact={true}>
             <Login />
           </Route>
-          <Route
-            path="/user/register"
-            exact={true}
-          >
+          <Route path="/user/register" exact={true}>
             <Register2 />
           </Route>
-          <Route
-            path="/company/register"
-            exact={true}
-          >
+          <Route path="/company/register" exact={true}>
             <Register />
           </Route>
-          <Route
-            path="/log-out"
-            exact={true}
-          >
+          <Route path="/log-out" exact={true}>
             <Logout />
           </Route>
-          <Route
-            path="/contacts"
-            exact={true}
-          >
+          <Route path="/contacts" exact={true}>
             <Contact />
           </Route>
-          <Route
-            path="/features"
-            exact={true}
-          >
+          <Route path="/features" exact={true}>
             <Feature />
           </Route>
-          <Route
-            path="/dashboard"
-            exact={true}
-          >
+          <Route path="/dashboard" exact={true}>
             <Dashboard />
+          </Route>
+          <Route path="/absen" exact={true}>
+            <Absen />
+          </Route>
+          <Route path="/pie" exact={true}>
+            <ChartPie />
+          </Route>
+          <Route path="/line" exact={true}>
+            <ChartLine />
           </Route>
         </Switch>
       </div>
     </Router>
-  )
-}
+  );
+};
 
-export default App
+export default App;

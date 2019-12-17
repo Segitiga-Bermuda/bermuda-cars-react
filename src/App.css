@@ -61,7 +61,7 @@
 }
 
 p {
-  font-family: 'Noto Sans JP';
+  font-family: "Noto Sans JP";
   margin-top: 25px !important;
   margin-bottom: 25px !important;
   padding: 10px;
@@ -77,12 +77,12 @@ p {
 }
 
 .division .card-title {
-  color: #3F51B5;
-  font-family: 'Russo One';
+  color: #3f51b5;
+  font-family: "Russo One";
 }
 
 .card-text {
-  font-family: 'Rubik';
+  font-family: "Rubik";
   margin: 10px !important;
 }
 
@@ -145,7 +145,7 @@ footer {
 
 footer h3,
 footer h5 {
-  color: #ffffff
+  color: #ffffff;
 }
 
 .desc {
@@ -218,8 +218,8 @@ footer h5 {
 }
 
 .features .card-title {
-  color: #17A2B8;
-  font-family: 'Fredoka One';
+  color: #17a2b8;
+  font-family: "Fredoka One";
   font-size: 2em;
 }
 
@@ -236,8 +236,8 @@ footer h5 {
 }
 
 .custom-control-label {
-  color: #183BF0;
-  font-family: 'Noto Sans JP';
+  color: #183bf0;
+  font-family: "Noto Sans JP";
   font-weight: 900;
 }
 
@@ -275,6 +275,25 @@ footer h5 {
   .forms {
     margin-top: 60px !important;
   }
+}
+
+.table td {
+  padding: 0;
+}
+
+.carousel {
+  width: 30%;
+  height: "50px";
+  margin: 0px auto;
+}
+
+.carousel p {
+  text-align: center;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  background-color: black;
 }
 
 .nav-link:hover {
