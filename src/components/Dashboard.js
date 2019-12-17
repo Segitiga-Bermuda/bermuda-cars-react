@@ -9,18 +9,49 @@ import Admin from './Admin'
 import Executive from './Executive'
 import Employer from './Employer'
 import User from './User'
+import ChartPie from './Pie'
+import ChartLine from './Line'
+import Absen from './Absen'
+import Profile from './Profile'
 import Boy from '../assets/images/boy.png'
 import { verify } from '../helpers'
+import { withRouter } from 'react-router-dom'
 
-export default class Dashboard extends Component {
+class Dashboard extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      user: verify() || {}
+      user: verify() || {},
+      func: ''
     }
 
     this.switchDashboard = this.switchDashboard.bind(this)
+    this.switchFunctions = this.switchFunctions.bind(this)
+  }
+
+  switchFunctions() {
+    let func = this.props.match.params.func
+
+    if (func === 'watch-revenue-reports') {
+      return <ChartLine />
+    } else if (func === 'watch-sales-reports') {
+      return <ChartPie />
+    } else if (func === 'add-revenue-report') {
+
+    } else if (func === 'add-sales-report') {
+
+    } else if (func === 'check-in') {
+
+    } else if (func === 'watch-attendance-reports') {
+      return <Absen />
+    } else if (func === 'tasks-manager') {
+
+    } else if (func === 'view-profile') {
+
+    } else if (func === 'edit-profile') {
+      return <Profile />
+    }
   }
 
   switchDashboard() {
@@ -110,8 +141,13 @@ export default class Dashboard extends Component {
             padding: '0'
           }}
         >
+          {
+            this.switchFunctions()
+          }
         </Col>
       </Row>
     )
   }
 }
+
+export default withRouter(Dashboard)

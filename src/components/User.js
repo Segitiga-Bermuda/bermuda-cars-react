@@ -20,7 +20,7 @@ export default class User extends Component {
                         <Card.Body>
                             <Link
                                 className="nav-link"
-                                to="/tasks-manager"
+                                to="/dashboard/tasks-manager"
                                 style={{
                                     textDecoration: 'none'
                                 }}
@@ -41,7 +41,7 @@ export default class User extends Component {
                         <Card.Body>
                             <Link
                                 className="nav-link"
-                                to="/view-profile"
+                                to="/dashboard/view-profile"
                                 style={{
                                     textDecoration: 'none'
                                 }}
@@ -50,7 +50,7 @@ export default class User extends Component {
                             </Link>
                             <Link
                                 className="nav-link"
-                                to="/edit-profile"
+                                to="/dashboard/edit-profile"
                                 style={{
                                     textDecoration: 'none'
                                 }}

@@ -20,7 +20,7 @@ export default class Employer extends Component {
                         <Card.Body>
                             <Link
                                 className="nav-link"
-                                to="/add-revenue-report"
+                                to="/dashboard/add-revenue-report"
                                 style={{
                                     textDecoration: 'none'
                                 }}
@@ -29,7 +29,7 @@ export default class Employer extends Component {
                             </Link>
                             <Link
                                 className="nav-link"
-                                to="/add-sales-report"
+                                to="/dashboard/add-sales-report"
                                 style={{
                                     textDecoration: 'none'
                                 }}
@@ -50,7 +50,7 @@ export default class Employer extends Component {
                         <Card.Body>
                             <Link
                                 className="nav-link"
-                                to="/check-in"
+                                to="/dashboard/check-in"
                                 style={{
                                     textDecoration: 'none'
                                 }}
@@ -71,7 +71,7 @@ export default class Employer extends Component {
                         <Card.Body>
                             <Link
                                 className="nav-link"
-                                to="/tasks-manager"
+                                to="/dashboard/tasks-manager"
                                 style={{
                                     textDecoration: 'none'
                                 }}
@@ -92,7 +92,7 @@ export default class Employer extends Component {
                         <Card.Body>
                             <Link
                                 className="nav-link"
-                                to="/view-profile"
+                                to="/dashboard/view-profile"
                                 style={{
                                     textDecoration: 'none'
                                 }}
@@ -101,7 +101,7 @@ export default class Employer extends Component {
                             </Link>
                             <Link
                                 className="nav-link"
-                                to="/edit-profile"
+                                to="/dashboard/edit-profile"
                                 style={{
                                     textDecoration: 'none'
                                 }}

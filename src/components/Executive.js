@@ -20,7 +20,7 @@ export default class Executive extends Component {
                         <Card.Body>
                             <Link
                                 className="nav-link"
-                                to="/watch-revenue-reports"
+                                to="/dashboard/watch-revenue-reports"
                                 style={{
                                     textDecoration: 'none'
                                 }}
@@ -29,7 +29,7 @@ export default class Executive extends Component {
                             </Link>
                             <Link
                                 className="nav-link"
-                                to="/watch-sales-reports"
+                                to="/dashboard/watch-sales-reports"
                                 style={{
                                     textDecoration: 'none'
                                 }}
@@ -38,7 +38,7 @@ export default class Executive extends Component {
                             </Link>
                             <Link
                                 className="nav-link"
-                                to="/add-revenue-report"
+                                to="/dashboard/add-revenue-report"
                                 style={{
                                     textDecoration: 'none'
                                 }}
@@ -47,7 +47,7 @@ export default class Executive extends Component {
                             </Link>
                             <Link
                                 className="nav-link"
-                                to="/add-sales-report"
+                                to="/dashboard/add-sales-report"
                                 style={{
                                     textDecoration: 'none'
                                 }}
@@ -68,7 +68,7 @@ export default class Executive extends Component {
                         <Card.Body>
                             <Link
                                 className="nav-link"
-                                to="/check-in"
+                                to="/dashboard/check-in"
                                 style={{
                                     textDecoration: 'none'
                                 }}
@@ -77,7 +77,7 @@ export default class Executive extends Component {
                             </Link>
                             <Link
                                 className="nav-link"
-                                to="/watch-attendance-reports"
+                                to="/dashboard/watch-attendance-reports"
                                 style={{
                                     textDecoration: 'none'
                                 }}
@@ -98,7 +98,7 @@ export default class Executive extends Component {
                         <Card.Body>
                             <Link
                                 className="nav-link"
-                                to="/tasks-manager"
+                                to="/dashboard/tasks-manager"
                                 style={{
                                     textDecoration: 'none'
                                 }}
@@ -119,7 +119,7 @@ export default class Executive extends Component {
                         <Card.Body>
                             <Link
                                 className="nav-link"
-                                to="/view-profile"
+                                to="/dashboard/view-profile"
                                 style={{
                                     textDecoration: 'none'
                                 }}
@@ -128,7 +128,7 @@ export default class Executive extends Component {
                             </Link>
                             <Link
                                 className="nav-link"
-                                to="/edit-profile"
+                                to="/dashboard/edit-profile"
                                 style={{
                                     textDecoration: 'none'
                                 }}
