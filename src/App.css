@@ -223,6 +223,18 @@ footer h5 {
   font-size: 2em;
 }
 
+.dashboard .card-header {
+  color: #000000;
+  font-family: 'Rubik';
+  font-weight: 900;
+}
+
+.dashboard .card-body {
+  color: #ffffff;
+  font-family: 'Rubik';
+  font-weight: 900;
+}
+
 .custom-control-label {
   color: #183BF0;
   font-family: 'Noto Sans JP';
@@ -267,4 +279,8 @@ footer h5 {
 
 .nav-link:hover {
   background-color: rgba(4, 39, 220, 1.0) !important;
+}
+
+.dashboard .card-header:hover {
+  cursor: pointer;
 }
