@@ -1,7 +1,68 @@
 import React, { Component } from "react";
 import { Container, FormGroup, FormControl, Button } from "react-bootstrap";
+import { AXIOS } from "../helpers";
+import Swal from "sweetalert2";
 
 export default class Additem extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      item: "",
+      price: "",
+      materialCost: "",
+      laborCost: "",
+      overheadCost: "",
+      color: ""
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  handleChange(e) {
+    let val = e.target.value;
+
+    this.setState({
+      [e.target.name]: val
+    });
+  }
+  handleSubmit(e) {
+    e.preventDefault();
+
+    if (
+      this.state.item === "" ||
+      this.state.price === "" ||
+      this.state.materialCost === "" ||
+      this.state.laborCost === "" ||
+      this.state.overheadCost === "" ||
+      this.state.color === ""
+    ) {
+      Swal.fire({
+        title: "Field is empty",
+        text: "Please fill all field",
+        icon: "error"
+      });
+
+      return null;
+    }
+    let path = `${process.env.REACT_APP_API}/inventory/add`;
+
+    console.log(path);
+    AXIOS()
+      .post(path, this.state)
+      .then(result => {
+        console.log(result);
+        if (result.data.message === `Data is successfully added.`) {
+          Swal.fire({
+            title: result.data.message,
+            icon: "success"
+          });
+        }
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+
   render() {
     return (
       <div style={{ marginTop: "100px" }}>
@@ -9,23 +70,27 @@ export default class Additem extends Component {
           <FormGroup>
             <FormControl
               required
-              id="fullName"
-              label="Full Name"
-              name="fullName"
-              autoComplete="fullName"
+              id="item"
+              label="Name"
+              name="item"
+              autoComplete="item"
               autoFocus
-              placeholder="Full Name"
+              placeholder="Item Name"
+              onChange={e => this.handleChange(e)}
+              value={this.state.item}
             />
           </FormGroup>
           <FormGroup>
             <FormControl
               required
-              id="Price"
+              id="price"
               label="Price"
-              name="Price"
-              autoComplete="Price"
+              name="price"
+              autoComplete="price"
               autoFocus
               placeholder="Price"
+              onChange={e => this.handleChange(e)}
+              value={this.state.price}
             />
           </FormGroup>
           <FormGroup>
@@ -37,6 +102,8 @@ export default class Additem extends Component {
               autoComplete="materialCost"
               autoFocus
               placeholder="Material Cost"
+              onChange={e => this.handleChange(e)}
+              value={this.state.materialCost}
             />
           </FormGroup>
           <FormGroup>
@@ -48,6 +115,8 @@ export default class Additem extends Component {
               autoComplete="laborCost"
               autoFocus
               placeholder="Labor Cost"
+              onChange={e => this.handleChange(e)}
+              value={this.state.laborCost}
             />
           </FormGroup>
           <FormGroup>
@@ -59,6 +128,8 @@ export default class Additem extends Component {
               autoComplete="overheadCost"
               autoFocus
               placeholder="Overhead Cost"
+              onChange={e => this.handleChange(e)}
+              value={this.state.overheadCost}
             />
           </FormGroup>
           <FormGroup>
@@ -70,6 +141,8 @@ export default class Additem extends Component {
               autoComplete="color"
               autoFocus
               placeholder="Color"
+              onChange={e => this.handleChange(e)}
+              value={this.state.color}
             />
           </FormGroup>
           <FormGroup>
@@ -81,6 +154,7 @@ export default class Additem extends Component {
                 margin: "0 auto",
                 minWidth: "150px"
               }}
+              onClick={e => this.handleSubmit(e)}
             >
               Add
             </Button>

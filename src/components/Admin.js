@@ -32,15 +32,6 @@ export default class Admin extends Component {
               </Link>
               <Link
                 className="nav-link"
-                to="/dashboard/add-revenue-report"
-                style={{
-                  textDecoration: "none"
-                }}
-              >
-                Add Revenue Report
-              </Link>
-              <Link
-                className="nav-link"
                 to="/dashboard/add-sales-report"
                 style={{
                   textDecoration: "none"

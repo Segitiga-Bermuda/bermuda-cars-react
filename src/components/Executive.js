@@ -30,15 +30,7 @@ export default class Executive extends Component {
               >
                 Watch Sales Report
               </Link>
-              <Link
-                className="nav-link"
-                to="/dashboard/add-revenue-report"
-                style={{
-                  textDecoration: "none"
-                }}
-              >
-                Add Revenue Report
-              </Link>
+
               <Link
                 className="nav-link"
                 to="/dashboard/add-sales-report"

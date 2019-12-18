@@ -34,7 +34,6 @@ class Dashboard extends Component {
       return <ChartLine />;
     } else if (func === "watch-sales-reports") {
       return <ChartPie />;
-    } else if (func === "add-revenue-report") {
     } else if (func === "add-sales-report") {
     } else if (func === "check-in") {
     } else if (func === "watch-attendance-reports") {
