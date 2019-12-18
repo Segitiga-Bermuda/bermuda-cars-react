@@ -95,7 +95,7 @@ class Dashboard extends Component {
           </h1>
           <Image
             roundedCircle={true}
-            src={Boy}
+            src={this.state.user.avatarPath}
             style={{
               backgroundColor: "#808080",
               display: "block",
@@ -105,10 +105,7 @@ class Dashboard extends Component {
               width: "25%"
             }}
           />
-          <h2 className="text-info">
-            {this.state.user.employerId}
-            &nbsp;(Employer ID)
-          </h2>
+          <h2 className="text-info">{this.state.user.employerId}</h2>
           <h3 className="text-danger">{this.state.user.role}</h3>
           <Accordion>{this.switchDashboard()}</Accordion>
         </Col>
