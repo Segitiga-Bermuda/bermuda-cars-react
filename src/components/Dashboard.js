@@ -11,7 +11,7 @@ import Profile from "./Profile";
 import Boy from "../assets/images/boy.png";
 import { verify } from "../helpers";
 import { withRouter } from "react-router-dom";
-import additem from "./Additem";
+import ViewProfile from "./ViewProfile";
 import Additem from "./Additem";
 
 class Dashboard extends Component {
@@ -40,6 +40,7 @@ class Dashboard extends Component {
       return <Absen />;
     } else if (func === "tasks-manager") {
     } else if (func === "view-profile") {
+      return <ViewProfile />;
     } else if (func === "edit-profile") {
       return <Profile />;
     } else if (func === "add-sales-report") {

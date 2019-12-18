@@ -8,7 +8,8 @@ import {
   Button,
   Row,
   Col,
-  Container
+  Container,
+  Image
 } from "react-bootstrap";
 import { AXIOS, verify } from "../helpers";
 import Swal from "sweetalert2";
@@ -29,6 +30,7 @@ class Profile extends Component {
     this.state = {
       role: verify().role || "",
       avatarPath: "",
+      avatarPath2: verify().avatarPath || "",
       email: "",
       password: ""
     };
@@ -280,8 +282,7 @@ class Profile extends Component {
 
     if (this.state.avatarPath === "") {
       Swal.fire({
-        title: "Field is empty",
-        text: "Please fill all field",
+        title: "Please Pick a File for New Avatar",
         icon: "error"
       });
 
@@ -298,10 +299,12 @@ class Profile extends Component {
       AXIOS()
         .put(path, this.state)
         .then(result => {
-          if (result.data.message === "Update Avatar.") {
+          if (result.data.message === "Update Avatar") {
             Swal.fire({
               title: "Avatar Update is Success",
               icon: "success"
+            }).then(decision => {
+              this.props.history.push("/log-in");
             });
           }
         })
@@ -314,10 +317,12 @@ class Profile extends Component {
       AXIOS()
         .put(path, this.state)
         .then(result => {
-          if (result.data.message === "Update Avatar.") {
+          if (result.data.message === "Update Avatar") {
             Swal.fire({
               title: "Avatar Update is Success",
               icon: "success"
+            }).then(decision => {
+              this.props.history.push("/log-in");
             });
           }
         })
@@ -330,10 +335,12 @@ class Profile extends Component {
       AXIOS()
         .put(path, this.state)
         .then(result => {
-          if (result.data.message === "Update Avatar.") {
+          if (result.data.message === "Update Avatar") {
             Swal.fire({
               title: "Avatar Update is Success",
               icon: "success"
+            }).then(decision => {
+              this.props.history.push("/log-in");
             });
           }
         })
@@ -346,10 +353,12 @@ class Profile extends Component {
       AXIOS()
         .put(path, this.state)
         .then(result => {
-          if (result.data.message === "Update Avatar.") {
+          if (result.data.message === "Update Avatar") {
             Swal.fire({
               title: "Avatar Update is Success",
               icon: "success"
+            }).then(decision => {
+              this.props.history.push("/log-in");
             });
           }
         })
@@ -370,6 +379,18 @@ class Profile extends Component {
             margin: "120px auto"
           }}
         >
+          <Image
+            roundedCircle={true}
+            src={this.state.avatarPath2}
+            style={{
+              backgroundColor: "#808080",
+              display: "block",
+              height: "auto",
+              margin: "25px auto",
+              padding: "15px",
+              width: "25%"
+            }}
+          />
           <Row
             style={{
               width: "90%",
@@ -502,6 +523,7 @@ class Profile extends Component {
                     type="password"
                     id="password"
                     fluid={true}
+                    autoComplete="new-password"
                     placeholder="Password"
                     onChange={e => this.handleChange(e)}
                     value={this.state.password}
