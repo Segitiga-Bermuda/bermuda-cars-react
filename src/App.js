@@ -14,7 +14,8 @@ import {
   Absen,
   ChartLine,
   ChartPie,
-  Profile
+  Profile,
+  Additem
 } from "./components";
 import "./App.css";
 
@@ -52,18 +53,6 @@ const App = () => {
         </Route>
         <Route path="/dashboard/:func">
           <Dashboard />
-        </Route>
-        <Route path="/absen" exact={true}>
-          <Absen />
-        </Route>
-        <Route path="/pie" exact={true}>
-          <ChartPie />
-        </Route>
-        <Route path="/line" exact={true}>
-          <ChartLine />
-        </Route>
-        <Route path="/profile" exact={true}>
-          <Profile />
         </Route>
       </Switch>
     </BrowserRouter>

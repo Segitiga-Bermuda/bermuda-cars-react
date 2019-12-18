@@ -116,7 +116,7 @@ export default class Absen extends Component {
             </tr>
           </tbody>
         </Table>
-
+        <br />
         <Table>
           <tr>
             <td style={{ backgroundColor: "green" }}>, </td>

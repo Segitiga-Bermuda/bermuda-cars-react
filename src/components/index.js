@@ -12,3 +12,4 @@ export { default as Absen } from "./Absen";
 export { default as ChartPie } from "./Pie";
 export { default as ChartLine } from "./Line";
 export { default as Profile } from "./Profile";
+export { default as Additem } from "./Additem";
