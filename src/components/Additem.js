@@ -1,5 +1,13 @@
 import React, { Component } from "react";
-import { Container, FormGroup, FormControl, Button } from "react-bootstrap";
+import {
+  Container,
+  FormGroup,
+  FormControl,
+  Button,
+  ListGroup,
+  ListGroupItem,
+  FormText
+} from "react-bootstrap";
 import { AXIOS } from "../helpers";
 import Swal from "sweetalert2";
 import bg from "../assets/images/classic3.jpg";
@@ -73,7 +81,8 @@ export default class Additem extends Component {
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
-            height: "100%",
+            maxHeight: "100%",
+            overflow: "auto",
             paddingTop: "100px"
           }}
         >
@@ -85,7 +94,14 @@ export default class Additem extends Component {
             }}
           >
             <Container>
+              <ListGroup>
+                <ListGroupItem active>
+                  <h3>ADD ITEM</h3>
+                </ListGroupItem>
+              </ListGroup>
+              <br />
               <FormGroup>
+                <FormText>Item Name :</FormText>
                 <FormControl
                   required
                   id="item"
@@ -99,6 +115,7 @@ export default class Additem extends Component {
                 />
               </FormGroup>
               <FormGroup>
+                <FormText>price :</FormText>
                 <FormControl
                   required
                   id="price"
@@ -112,6 +129,7 @@ export default class Additem extends Component {
                 />
               </FormGroup>
               <FormGroup>
+                <FormText>Material Cost :</FormText>
                 <FormControl
                   required
                   id="materialCost"
@@ -125,6 +143,7 @@ export default class Additem extends Component {
                 />
               </FormGroup>
               <FormGroup>
+                <FormText>Labor Cost :</FormText>
                 <FormControl
                   required
                   id="laborCost"
@@ -138,6 +157,7 @@ export default class Additem extends Component {
                 />
               </FormGroup>
               <FormGroup>
+                <FormText>Overhead Cost :</FormText>
                 <FormControl
                   required
                   id="overheadCost"
@@ -151,6 +171,7 @@ export default class Additem extends Component {
                 />
               </FormGroup>
               <FormGroup>
+                <FormText>Color :</FormText>
                 <FormControl
                   required
                   id="color"

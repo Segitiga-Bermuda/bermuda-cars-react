@@ -9,7 +9,9 @@ import {
   Row,
   Col,
   Container,
-  Image
+  Image,
+  ListGroup,
+  ListGroupItem
 } from "react-bootstrap";
 import { AXIOS, verify } from "../helpers";
 import Swal from "sweetalert2";
@@ -379,18 +381,27 @@ class Profile extends Component {
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
             height: "100%",
-
-            paddingTop: "40px"
+            padding: "20px 0px"
           }}
         >
+          <div
+            style={{
+              width: "70%",
+              border: "5px solid gray",
+              margin: "0 auto",
+              backgroundColor: "#808080"
+            }}
+          >
+            <h4 style={{ color: "white" }}>EDIT PROFILE</h4>
+          </div>
           <Container
             style={{
               width: "70%",
               border: "5px solid gray",
-              padding: "50px 5px",
               margin: "0 auto"
             }}
           >
+            <br />
             <Image
               roundedCircle={true}
               src={this.state.avatarPath2}
