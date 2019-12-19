@@ -14,6 +14,7 @@ import {
 import { AXIOS, verify } from "../helpers";
 import Swal from "sweetalert2";
 import { withRouter } from "react-router-dom";
+import bg from "../assets/images/classic2.jpg";
 
 const API_FILESTACK = process.env.REACT_APP_API_FILESTACK;
 const PickerOptions = {
@@ -371,111 +372,70 @@ class Profile extends Component {
   render() {
     return (
       <>
-        <Container
+        <div
           style={{
-            width: "70%",
-            border: "1px solid black",
-            padding: "50px",
-            margin: "120px auto"
+            backgroundImage: `url(${bg})`,
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            height: "100%",
+
+            paddingTop: "40px"
           }}
         >
-          <Image
-            roundedCircle={true}
-            src={this.state.avatarPath2}
+          <Container
             style={{
-              backgroundColor: "#808080",
-              display: "block",
-              height: "auto",
-              margin: "25px auto",
-              padding: "15px",
-              width: "25%"
-            }}
-          />
-          <Row
-            style={{
-              width: "90%",
-              margin: "0 auto",
-              padding: "10px 0"
+              width: "70%",
+              border: "5px solid gray",
+              padding: "50px 5px",
+              margin: "0 auto"
             }}
           >
-            <Col
-              md={{
-                span: 8,
-                order: 1
+            <Image
+              roundedCircle={true}
+              src={this.state.avatarPath2}
+              style={{
+                backgroundColor: "#808080",
+                display: "block",
+                height: "auto",
+                margin: "25px auto",
+                padding: "15px",
+                width: "25%"
               }}
-              xs={{
-                span: 10,
-                order: 1
+            />
+            <Row
+              style={{
+                width: "90%",
+                margin: "0 auto",
+                padding: "10px 0"
               }}
             >
-              <form>
-                <Grid container spacing={2}>
-                  <Grid item xs={6}>
-                    <ReactFilestack
-                      apikey={process.env.REACT_APP_API_FILESTACK}
-                      onSuccess={res => {
-                        this.setState({
-                          avatarPath: res.filesUploaded[0].url
-                        });
+              <Col
+                md={{
+                  span: 8,
+                  order: 1
+                }}
+                xs={{
+                  span: 10,
+                  order: 1
+                }}
+              >
+                <form>
+                  <Grid container spacing={2}>
+                    <Grid item xs={6}>
+                      <ReactFilestack
+                        apikey={process.env.REACT_APP_API_FILESTACK}
+                        onSuccess={res => {
+                          this.setState({
+                            avatarPath: res.filesUploaded[0].url
+                          });
 
-                        console.log(this.state.avatarPath);
-                      }}
-                    />
+                          console.log(this.state.avatarPath);
+                        }}
+                      />
+                    </Grid>
                   </Grid>
-                </Grid>
-              </form>
-            </Col>
-            <Col
-              md={{
-                span: 2,
-                order: 2
-              }}
-              xs={{
-                span: 12,
-                order: 2
-              }}
-            >
-              <Button
-                type="submit"
-                variant="success"
-                onClick={e => this.handleSubmit3(e)}
-              >
-                Update Avatar
-              </Button>
-            </Col>
-          </Row>
-          <Form>
-            <Row
-              style={{
-                width: "90%",
-                margin: "0 auto",
-                padding: "10px 0"
-              }}
-            >
-              <Col
-                md={{
-                  span: 8,
-                  order: 1
-                }}
-                xs={{
-                  span: 10,
-                  order: 1
-                }}
-              >
-                <FormGroup>
-                  <FormControl
-                    required
-                    id="email"
-                    label="Email Address"
-                    name="email"
-                    autoFocus
-                    fluid={true}
-                    block
-                    placeholder="Email Address"
-                    onChange={e => this.handleChange(e)}
-                    value={this.state.email}
-                  />
-                </FormGroup>
+                </form>
               </Col>
               <Col
                 md={{
@@ -490,68 +450,121 @@ class Profile extends Component {
                 <Button
                   type="submit"
                   variant="success"
-                  onClick={e => this.handleSubmit1(e)}
+                  onClick={e => this.handleSubmit3(e)}
                 >
-                  Update Email
+                  Update Avatar
                 </Button>
               </Col>
             </Row>
-          </Form>
-          <Form>
-            <Row
-              style={{
-                width: "90%",
-                margin: "0 auto",
-                padding: "10px 0"
-              }}
-            >
-              <Col
-                md={{
-                  span: 8,
-                  order: 1
-                }}
-                xs={{
-                  span: 10,
-                  order: 1
+            <Form>
+              <Row
+                style={{
+                  width: "90%",
+                  margin: "0 auto",
+                  padding: "10px 0"
                 }}
               >
-                <FormGroup>
-                  <FormControl
-                    required
-                    name="password"
-                    label="Password"
-                    type="password"
-                    id="password"
-                    fluid={true}
-                    autoComplete="new-password"
-                    placeholder="Password"
-                    onChange={e => this.handleChange(e)}
-                    value={this.state.password}
-                  />
-                </FormGroup>
-              </Col>
+                <Col
+                  md={{
+                    span: 8,
+                    order: 1
+                  }}
+                  xs={{
+                    span: 10,
+                    order: 1
+                  }}
+                >
+                  <FormGroup>
+                    <FormControl
+                      required
+                      id="email"
+                      label="Email Address"
+                      name="email"
+                      autoFocus
+                      fluid={true}
+                      block
+                      placeholder="Email Address"
+                      onChange={e => this.handleChange(e)}
+                      value={this.state.email}
+                    />
+                  </FormGroup>
+                </Col>
+                <Col
+                  md={{
+                    span: 2,
+                    order: 2
+                  }}
+                  xs={{
+                    span: 12,
+                    order: 2
+                  }}
+                >
+                  <Button
+                    type="submit"
+                    variant="success"
+                    onClick={e => this.handleSubmit1(e)}
+                  >
+                    Update Email
+                  </Button>
+                </Col>
+              </Row>
+            </Form>
+            <Form>
+              <Row
+                style={{
+                  width: "90%",
+                  margin: "0 auto",
+                  padding: "10px 0"
+                }}
+              >
+                <Col
+                  md={{
+                    span: 8,
+                    order: 1
+                  }}
+                  xs={{
+                    span: 10,
+                    order: 1
+                  }}
+                >
+                  <FormGroup>
+                    <FormControl
+                      required
+                      name="password"
+                      label="Password"
+                      type="password"
+                      id="password"
+                      fluid={true}
+                      autoComplete="new-password"
+                      placeholder="Password"
+                      onChange={e => this.handleChange(e)}
+                      value={this.state.password}
+                    />
+                  </FormGroup>
+                </Col>
 
-              <Col
-                md={{
-                  span: 2,
-                  order: 2
-                }}
-                xs={{
-                  span: 12,
-                  order: 2
-                }}
-              >
-                <Button
-                  type="submit"
-                  variant="success"
-                  onClick={e => this.handleSubmit2(e)}
+                <Col
+                  md={{
+                    span: 2,
+                    order: 2
+                  }}
+                  xs={{
+                    span: 12,
+                    order: 2
+                  }}
                 >
-                  Update Password
-                </Button>
-              </Col>
-            </Row>
-          </Form>
-        </Container>
+                  <Button
+                    type="submit"
+                    variant="success"
+                    onClick={e => this.handleSubmit2(e)}
+                  >
+                    Update Password
+                  </Button>
+                </Col>
+              </Row>
+            </Form>
+          </Container>
+        </div>
       </>
     );
   }

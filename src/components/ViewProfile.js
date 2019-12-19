@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { verify } from "../helpers";
 import { AXIOS } from "../helpers";
 import { Image, ListGroup } from "react-bootstrap";
+import background from "../assets/images/classic.jpg";
 
 export default class ViewProfile extends Component {
   constructor(props) {
@@ -67,56 +68,102 @@ export default class ViewProfile extends Component {
       <>
         <div
           style={{
-            margin: "0 auto",
-            width: "70%",
-            textAlign: "center"
+            backgroundImage: `url(${background})`,
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover"
           }}
         >
-          <Image
-            src={this.state.user.avatarPath}
-            width="100px"
-            height="100px"
-            thumbnail
-            style={{ display: "block", margin: "0 auto" }}
-          />
-          <ListGroup>
-            <ListGroup.Item variant="primary">
-              <h4>My Full Name Is</h4>
-            </ListGroup.Item>
-            <ListGroup.Item>
-              <h5>{this.state.user.fullName}</h5>
-            </ListGroup.Item>
-            <ListGroup.Item variant="success">
-              <h4>Born</h4>
-            </ListGroup.Item>
-            <ListGroup.Item>
-              <h5>{this.state.user.born}</h5>
-            </ListGroup.Item>
-            <ListGroup.Item variant="primary">
-              <h4>My Gender is</h4>
-            </ListGroup.Item>
-            <ListGroup.Item>
-              <h5>{this.state.user.gender}</h5>
-            </ListGroup.Item>
-            <ListGroup.Item variant="success">
-              <h4>My Employer ID is</h4>
-            </ListGroup.Item>
-            <ListGroup.Item>
-              <h5>{this.state.user.employerId}</h5>
-            </ListGroup.Item>
-            <ListGroup.Item variant="primary">
-              <h4>My Departement is</h4>
-            </ListGroup.Item>
-            <ListGroup.Item>
-              <h5>{this.state.user.departement}</h5>
-            </ListGroup.Item>
-            <ListGroup.Item variant="success">
-              <h4>My Role is</h4>
-            </ListGroup.Item>
-            <ListGroup.Item>
-              <h5>{this.state.user.role}</h5>
-            </ListGroup.Item>
-          </ListGroup>
+          <div
+            style={{
+              margin: "0 auto",
+              width: "70%",
+              textAlign: "center"
+            }}
+          >
+            <br />
+            <Image
+              src={this.state.user.avatarPath}
+              width="200px"
+              height="200px"
+              thumbnail
+              style={{
+                display: "block",
+                margin: "0 auto",
+                backgroundColor: "#90949c"
+              }}
+            />
+            <br />
+            <ListGroup
+              style={{
+                boxShadow: "6px 6px 6px gray",
+                marginRight: "30px"
+              }}
+            >
+              <ListGroup.Item variant="primary">
+                <h4>My Full Name Is</h4>
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <h5>{this.state.user.fullName}</h5>
+              </ListGroup.Item>
+            </ListGroup>
+            <br />
+            <ListGroup
+              style={{ boxShadow: "6px 6px 6px gray", marginLeft: "30px" }}
+            >
+              <ListGroup.Item variant="success">
+                <h4>Born</h4>
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <h5>{this.state.user.born}</h5>
+              </ListGroup.Item>
+            </ListGroup>
+            <br />
+            <ListGroup
+              style={{ boxShadow: "6px 6px 6px gray", marginRight: "30px" }}
+            >
+              <ListGroup.Item variant="primary">
+                <h4>My Gender is</h4>
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <h5>{this.state.user.gender}</h5>
+              </ListGroup.Item>
+            </ListGroup>
+            <br />
+            <ListGroup
+              style={{ boxShadow: "6px 6px 6px gray", marginLeft: "30px" }}
+            >
+              <ListGroup.Item variant="success">
+                <h4>My Employer ID is</h4>
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <h5>{this.state.user.employerId}</h5>
+              </ListGroup.Item>
+            </ListGroup>
+            <br />
+            <ListGroup
+              style={{ boxShadow: "6px 6px 6px gray", marginRight: "30px" }}
+            >
+              <ListGroup.Item variant="primary">
+                <h4>My Departement is</h4>
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <h5>{this.state.user.departement}</h5>
+              </ListGroup.Item>
+            </ListGroup>
+            <br />
+            <ListGroup
+              style={{ boxShadow: "6px 6px 6px gray", marginLeft: "30px" }}
+            >
+              <ListGroup.Item variant="success">
+                <h4>My Role is</h4>
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <h5>{this.state.user.role}</h5>
+              </ListGroup.Item>
+            </ListGroup>
+            <br />
+          </div>
         </div>
       </>
     );
