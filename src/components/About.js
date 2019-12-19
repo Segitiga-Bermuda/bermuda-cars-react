@@ -139,7 +139,7 @@ export default function About() {
                     <li>Give more attention to customers both in terms of service facilities</li>
                     <li>Provides all the flexibility to purchase and have things</li>
                     <li>Providing convenience, comfort and safety for customers to get the best solutions in automotive</li>
-                  </ol>                
+                  </ol>
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -212,7 +212,7 @@ export default function About() {
                     <li>Car Sport</li>
                     <li>SUV</li>
                     <li>MVP</li>
-                  </ol>                
+                  </ol>
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -242,7 +242,7 @@ export default function About() {
                     <li>Services</li>
                     <li>Maintenance</li>
                     <li>Test Drive</li>
-                  </ol>                
+                  </ol>
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -314,7 +314,7 @@ export default function About() {
                     <li>Top Brands</li>
                     <li>Best Brands</li>
                     <li>Super Brands</li>
-                  </ol>                                
+                  </ol>
                 </Card.Text>
               </Card.Body>
             </Card>

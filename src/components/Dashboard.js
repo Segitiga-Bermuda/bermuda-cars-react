@@ -13,6 +13,7 @@ import { verify } from "../helpers";
 import { withRouter } from "react-router-dom";
 import ViewProfile from "./ViewProfile";
 import Additem from "./Additem";
+import AttendanceReport from './AttendanceReport'
 
 class Dashboard extends Component {
   constructor(props) {
@@ -37,7 +38,7 @@ class Dashboard extends Component {
     } else if (func === "add-sales-report") {
     } else if (func === "check-in") {
     } else if (func === "watch-attendance-reports") {
-      return <Absen />;
+      return <AttendanceReport />;
     } else if (func === "tasks-manager") {
     } else if (func === "view-profile") {
       return <ViewProfile />;

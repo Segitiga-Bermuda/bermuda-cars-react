@@ -80,10 +80,10 @@ export default function About() {
                   alt="economy"
                 />
                 <Card.Text>
-                An Income Statement or Profit and Loss Statement
-                is a part of a company's financial statements that are generated
-                in an accounting period that describes the elements of a company's income
-                and expenses so as to produce a net profit (or loss).
+                  An Income Statement or Profit and Loss Statement
+                  is a part of a company's financial statements that are generated
+                  in an accounting period that describes the elements of a company's income
+                  and expenses so as to produce a net profit (or loss).
                 </Card.Text>
               </Card.Body>
             </Card>
