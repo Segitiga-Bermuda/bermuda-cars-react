@@ -9,11 +9,13 @@ import ChartLine from "./Line";
 import Absen from "./Absen";
 import Profile from "./Profile";
 import Boy from "../assets/images/boy.png";
+import CheckIn from './CheckIn'
 import { verify } from "../helpers";
 import { withRouter } from "react-router-dom";
 import ViewProfile from "./ViewProfile";
 import Additem from "./Additem";
 import AttendanceReport from './AttendanceReport'
+import AddSales from './AddSales'
 
 class Dashboard extends Component {
   constructor(props) {
@@ -36,7 +38,9 @@ class Dashboard extends Component {
     } else if (func === "watch-sales-reports") {
       return <ChartPie />;
     } else if (func === "add-sales-report") {
+      return <AddSales />
     } else if (func === "check-in") {
+      return <CheckIn/>
     } else if (func === "watch-attendance-reports") {
       return <AttendanceReport />;
     } else if (func === "tasks-manager") {
