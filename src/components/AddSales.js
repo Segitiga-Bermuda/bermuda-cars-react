@@ -6,7 +6,7 @@ import {
     Button,
     FormText
 } from 'react-bootstrap'
-import { AXIOS, verify } from '../helpers'
+import { AXIOS } from '../helpers'
 import Swal from 'sweetalert2'
 
 export default class AddSales extends Component {
@@ -52,12 +52,12 @@ export default class AddSales extends Component {
 
         AXIOS().post(path, this.state)
             .then(result => {
-                if(result.data.message === 'ordinary user cant edit this data') {
+                if (result.data.message === 'ordinary user cant edit this data') {
                     Swal.fire({
                         title: 'Ordinary User Can\'t Edit This Data!',
                         icon: 'warning'
                     })
-                } else if(result.data.message === 'Data is successfully added.') {
+                } else if (result.data.message === 'Data is successfully added.') {
                     Swal.fire({
                         title: result.data.message,
                         icon: 'success'
@@ -98,37 +98,37 @@ export default class AddSales extends Component {
                     boxSizing: 'border-box',
                     paddingTop: '25px'
                 }}>
-                <FormGroup>
-                    <FormText>
-                        Item ID:
+                    <FormGroup>
+                        <FormText>
+                            Item ID:
                     </FormText>
-                    <FormControl 
-                        as="select" 
-                        type="select" 
-                        onChange={e => this.handleChange(e)} 
-                        name="itemId" 
-                        id="item-id" 
-                        label="Item ID" 
-                        value={this.state.itemId}
-                    >
-                        {
-                            this.state.items.map(item => {
-                                return this.showItem(item)
-                            })
-                        }
-                    </FormControl>
-                </FormGroup>
+                        <FormControl
+                            as="select"
+                            type="select"
+                            onChange={e => this.handleChange(e)}
+                            name="itemId"
+                            id="item-id"
+                            label="Item ID"
+                            value={this.state.itemId}
+                        >
+                            {
+                                this.state.items.map(item => {
+                                    return this.showItem(item)
+                                })
+                            }
+                        </FormControl>
+                    </FormGroup>
                     <FormGroup>
                         <FormText>
                             Month:
                         </FormText>
-                        <FormControl 
-                            as="select" 
-                            type="select" 
-                            onChange={e => this.handleChange(e)} 
-                            name="month" 
-                            id="month" 
-                            label="Month" 
+                        <FormControl
+                            as="select"
+                            type="select"
+                            onChange={e => this.handleChange(e)}
+                            name="month"
+                            id="month"
+                            label="Month"
                             value={this.state.month}
                         >
                             <option value="January">

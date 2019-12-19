@@ -29,11 +29,11 @@ class chartPie extends Component {
   }
 
   handleChange(e) {
-      let val = e.target.value
+    let val = e.target.value
 
-      this.setState({
-          [e.target.name]: val
-      })
+    this.setState({
+      [e.target.name]: val
+    })
   }
 
   handleDateChange() {
@@ -97,87 +97,94 @@ class chartPie extends Component {
       <div
         style={{
           height: "100%",
-          margin: "120px auto"
+          margin: "50px auto",
+          width: '80%'
         }}
       >
+        <h1>
+          Sales Reports
+        </h1>
         <Form>
-            <FormGroup>
-              <FormText>
-                Year:
-              </FormText>
-              <FormControl
-                type="number"
-                step="1"
-                min="1970"
-                max={this.state.maxYear}
-                name="year"
-                id="year"
-                onChange={e => this.handleChange(e)}
-                value={this.state.year}
-              />
-            </FormGroup>
-                    <FormGroup>
-                        <FormText>
-                            Month:
-                        </FormText>
-                        <FormControl 
-                            as="select" 
-                            type="select" 
-                            onChange={e => this.handleChange(e)} 
-                            name="month" 
-                            id="month" 
-                            label="Month" 
-                            value={this.state.month}
-                        >
-                            <option value="January">
-                                January
-                            </option>
-                            <option value="February">
-                                February
-                            </option>
-                            <option value="March">
-                                March
-                           </option>
-                            <option value="April">
-                                April
-                            </option>
-                            <option value="May">
-                                May
-                            </option>
-                            <option value="June">
-                                June
-                            </option>
-                            <option value="July">
-                                July
-                           </option>
-                            <option value="August">
-                                August
-                            </option>
-                            <option value="September">
-                                September
-                            </option>
-                            <option value="October">
-                                October
-                            </option>
-                            <option value="November">
-                                November
-                           </option>
-                            <option value="December">
-                                December
-                            </option>
-                        </FormControl>
-                    </FormGroup>
-                <Button 
-                  onClick={e => this.handleDateChange(e)}
-                  style={{
-                    display: 'block',
-                    margin: '0 auto'
-                  }}
-                >
-                  Change Date
-                </Button>
-              </Form>
-        <br />
+          <FormGroup>
+            <FormText>
+              Year:
+            </FormText>
+            <FormControl
+              type="number"
+              step="1"
+              min="1970"
+              max={this.state.maxYear}
+              name="year"
+              id="year"
+              onChange={e => this.handleChange(e)}
+              value={this.state.year}
+            />
+          </FormGroup>
+          <FormGroup>
+            <FormText>
+              Month:
+            </FormText>
+            <FormControl
+              as="select"
+              type="select"
+              onChange={e => this.handleChange(e)}
+              name="month"
+              id="month"
+              label="Month"
+              value={this.state.month}
+            >
+              <option value="January">
+                January
+              </option>
+              <option value="February">
+                February
+              </option>
+              <option value="March">
+                March
+              </option>
+              <option value="April">
+                April
+              </option>
+              <option value="May">
+                May
+              </option>
+              <option value="June">
+                June
+              </option>
+              <option value="July">
+                July
+              </option>
+              <option value="August">
+                August
+              </option>
+              <option value="September">
+                September
+              </option>
+              <option value="October">
+                October
+              </option>
+              <option value="November">
+                November
+              </option>
+              <option value="December">
+                December
+              </option>
+            </FormControl>
+          </FormGroup>
+          <Button
+            onClick={e => this.handleDateChange(e)}
+            style={{
+              display: 'block',
+              margin: '0 auto'
+            }}
+          >
+            Change Date
+          </Button>
+        </Form>
+        <hr />
+        <h2>
+          Sold Items
+        </h2>
         <Pie
           data={{
             labels: this.state.item,
@@ -188,9 +195,32 @@ class chartPie extends Component {
               }
             ]
           }}
-          height="90%"
+          width={
+            window.innerWidth >= 991 ?
+              window.innerWidth * 0.2 :
+              window.innerWidth * 0.8
+          }
         />
-        <br />
+        <hr />
+        <h2>
+          Unsold Items
+        </h2>
+        <Pie
+          data={{
+            labels: this.state.item,
+            datasets: [
+              {
+                data: this.state.unsold,
+                backgroundColor: this.state.color
+              }
+            ]
+          }}
+          width={
+            window.innerWidth >= 991 ?
+              window.innerWidth * 0.2 :
+              window.innerWidth * 0.8
+          }
+        />
       </div>
     );
   }

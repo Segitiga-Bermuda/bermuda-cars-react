@@ -10,12 +10,7 @@ import {
   Feature,
   Contact,
   Register2,
-  Dashboard,
-  Absen,
-  ChartLine,
-  ChartPie,
-  Profile,
-  Additem
+  Dashboard
 } from "./components";
 import "./App.css";
 

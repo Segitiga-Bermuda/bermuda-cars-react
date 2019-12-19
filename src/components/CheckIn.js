@@ -3,7 +3,8 @@ import {
     FormControl,
     FormGroup,
     Form,
-    Button
+    Button,
+    FormText
 } from 'react-bootstrap'
 import { AXIOS, verify } from '../helpers'
 import Swal from 'sweetalert2'
@@ -33,21 +34,20 @@ export default class CheckIn extends Component {
         e.preventDefault()
 
         let path = `${process.env.REACT_APP_API}/attreport/add`
-        console.log(path)
 
         AXIOS().post(path, this.state)
             .then(result => {
-                if(result.data.message === 'You have been check in today.') {
+                if (result.data.message === 'You have been check in today.') {
                     Swal.fire({
                         title: result.data.message,
                         icon: 'warning'
                     })
-                } else if(result.data.message === 'Data is successfully added.') {
+                } else if (result.data.message === 'Data is successfully added.') {
                     Swal.fire({
                         title: 'You Have Been Check In Today.',
                         icon: 'success'
                     })
-                } else if(result.data.message === 'You Are Late.') {
+                } else if (result.data.message === 'You Are Late.') {
                     Swal.fire({
                         title: 'You Are Late.',
                         icon: 'warning'
@@ -62,52 +62,59 @@ export default class CheckIn extends Component {
     render() {
         return (
             <>
-                <h1>
-                    Check In
-                </h1>
-                <h2>
-                    {
-                        this.state.user.fullName
-                    }
-                </h2>
-                <h3>
-                    Employer ID:&nbsp;
-                    {
-                        this.state.user.employerId
-                    }
-                </h3>
-                <Form style={{
-                    width: '80%',
-                    margin: '0 auto',
-                    boxSizing: 'border-box',
-                    paddingTop: '25px'
+                <div style={{
+                    marginTop: '50px'
                 }}>
-                    <FormGroup>
-                        <FormControl as="select" type="select" onChange={e => this.handleChange(e)} name="status" id="status" label="Status" value={this.state.status}>
-                        <option value="Presence">
-                            Presence
-                        </option>
-                        <option value="Sick">
-                            Sick
-                        </option>
-                        <option value="Leave">
-                            Leave
-                        </option>
-                        <option value="Absence">
-                            Absence
-                        </option>
-                        </FormControl>
-                    </FormGroup>
-                    <FormGroup>
-                        <Button
-                            variant="success"
-                            block={true}
-                            onClick={e => this.handleSubmit(e)}
-                        >
-                            Check In
+                    <h1>
+                        Check In
+                </h1>
+                    <h2>
+                        {
+                            this.state.user.fullName
+                        }
+                    </h2>
+                    <h3>
+                        Employer ID:&nbsp;
+                    {
+                            this.state.user.employerId
+                        }
+                    </h3>
+                    <Form style={{
+                        width: '80%',
+                        margin: '0 auto',
+                        boxSizing: 'border-box',
+                        paddingTop: '25px'
+                    }}>
+                        <FormGroup>
+                            <FormText>
+                                Status:
+                            </FormText>
+                            <FormControl as="select" type="select" onChange={e => this.handleChange(e)} name="status" id="status" label="Status" value={this.state.status}>
+                                <option value="Presence">
+                                    Presence
+                                </option>
+                                <option value="Sick">
+                                    Sick
+                                </option>
+                                <option value="Leave">
+                                    Leave
+                                </option>
+                                <option value="Absence">
+                                    Absence
+                                </option>
+                            </FormControl>
+                        </FormGroup>
+                        <FormGroup>
+                            <Button
+                                variant="success"
+                                block={true}
+                                onClick={e => this.handleSubmit(e)}
+                            >
+                                Check In
                         </Button>
-                    </FormGroup>
-                </Form>
+                        </FormGroup>
+                    </Form>
+                </div>
             </>
         )
     }

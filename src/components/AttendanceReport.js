@@ -1,6 +1,13 @@
 import React, { Component } from 'react'
-import { AXIOS, verify } from '../helpers'
-import { Table, Carousel } from "react-bootstrap";
+import { AXIOS } from '../helpers'
+import {
+    Table,
+    Button,
+    Form,
+    FormGroup,
+    FormText,
+    FormControl
+} from "react-bootstrap";
 import MembersAttendanceReport from './MembersAttendanceReport.js'
 
 export default class AttendanceReport extends Component {
@@ -8,32 +15,142 @@ export default class AttendanceReport extends Component {
         super(props)
 
         this.state = {
-            attendanceReport: []
+            attendanceReport: [],
+            year: 0,
+            maxYear: 0,
+            month: 'January',
         }
+
+        this.handleChange = this.handleChange.bind(this)
+        this.handleDateChange = this.handleDateChange.bind(this)
+    }
+
+    handleChange(e) {
+        let val = e.target.value
+
+        this.setState({
+            [e.target.name]: val
+        })
+    }
+
+    handleDateChange() {
+        AXIOS()
+            .get(`${process.env.REACT_APP_API}/attreport/${this.state.year}/${this.state.month}`)
+            .then(res => {
+                this.setState({
+                    attendanceReport: res.data.data
+                })
+            });
     }
 
     componentDidMount() {
-        let path = `${process.env.REACT_APP_API}/attreport/2019/December`
+        let year = new Date().getFullYear()
+
+        let path = `${process.env.REACT_APP_API}/attreport/${year}/${this.state.month}`
         AXIOS()
             .get(path)
             .then(result => {
                 this.setState({
-                    attendanceReport: result.data.data
+                    attendanceReport: result.data.data,
+                    year: year,
+                    maxYear: year
                 })
-
-                console.log(this.state.attendanceReport)
             })
     }
 
     render() {
         return (
-            <div>
+            <div style={{
+                width: '80%',
+                margin: '50px auto'
+            }}>
+                <h1>
+                    Attendance Reports
+                </h1>
+                <Form>
+                    <FormGroup>
+                        <FormText>
+                            Year:
+                        </FormText>
+                        <FormControl
+                            type="number"
+                            step="1"
+                            min="1970"
+                            max={this.state.maxYear}
+                            name="year"
+                            id="year"
+                            onChange={e => this.handleChange(e)}
+                            value={this.state.year}
+                        />
+                    </FormGroup>
+                    <FormGroup>
+                        <FormText>
+                            Month:
+                        </FormText>
+                        <FormControl
+                            as="select"
+                            type="select"
+                            onChange={e => this.handleChange(e)}
+                            name="month"
+                            id="month"
+                            label="Month"
+                            value={this.state.month}
+                        >
+                            <option value="January">
+                                January
+                            </option>
+                            <option value="February">
+                                February
+                            </option>
+                            <option value="March">
+                                March
+                            </option>
+                            <option value="April">
+                                April
+                            </option>
+                            <option value="May">
+                                May
+                            </option>
+                            <option value="June">
+                                June
+                            </option>
+                            <option value="July">
+                                July
+                            </option>
+                            <option value="August">
+                                August
+                            </option>
+                            <option value="September">
+                                September
+                            </option>
+                            <option value="October">
+                                October
+                            </option>
+                            <option value="November">
+                                November
+                            </option>
+                            <option value="December">
+                                December
+                            </option>
+                        </FormControl>
+                    </FormGroup>
+                    <Button
+                        onClick={e => this.handleDateChange(e)}
+                        style={{
+                            display: 'block',
+                            margin: '0 auto'
+                        }}
+                    >
+                        Change Date
+                    </Button>
+                </Form>
+                <hr />
                 <Table
                     responsive
                     striped
                     bordered
                     hover
-                    style={{ marginTop: "100px" }}
+                    style={{ marginTop: "50px" }}
                 >
                     <thead>
                         <tr>
@@ -152,39 +269,39 @@ export default class AttendanceReport extends Component {
                 <Table
                     responsive
                     striped
-                    bordered
                     hover
                     size="lg"
+                    variant="dark"
                 >
                     <tbody>
                         <tr>
-                            <td style={{ backgroundColor: "green" }}>, </td>
+                            <td style={{ backgroundColor: "green" }}>&nbsp;</td>
                             <td>
-                                ==> <b>Presence</b>
+                                &nbsp;=&nbsp; <b>Presence</b>
                             </td>
                         </tr>
                         <tr>
-                            <td style={{ backgroundColor: "blue" }}> </td>
+                            <td style={{ backgroundColor: "blue" }}>&nbsp;</td>
                             <td>
-                                ==> <b>Sick</b>
+                                &nbsp;=&nbsp; <b>Sick</b>
                             </td>
                         </tr>
                         <tr>
-                            <td style={{ backgroundColor: "red" }}> </td>
+                            <td style={{ backgroundColor: "red" }}>&nbsp;</td>
                             <td>
-                                ==> <b>Absence</b>
+                                &nbsp;=&nbsp; <b>Absence</b>
                             </td>
                         </tr>
                         <tr>
-                            <td style={{ backgroundColor: "purple" }}> </td>
+                            <td style={{ backgroundColor: "purple" }}>&nbsp;</td>
                             <td>
-                                ==> <b> Leave</b>
+                                &nbsp;=&nbsp; <b> Leave</b>
                             </td>
                         </tr>
                         <tr>
-                            <td style={{ backgroundColor: "white" }}> </td>
+                            <td style={{ backgroundColor: "#00c0c0" }}>&nbsp;</td>
                             <td>
-                                ==> <b> Weekend</b>
+                                &nbsp;=&nbsp; <b> Weekend</b>
                             </td>
                         </tr>
                     </tbody>
