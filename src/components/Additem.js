@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Container, FormGroup, FormControl, Button } from "react-bootstrap";
 import { AXIOS } from "../helpers";
 import Swal from "sweetalert2";
+import bg from "../assets/images/classic3.jpg";
 
 export default class Additem extends Component {
   constructor(props) {
@@ -65,102 +66,121 @@ export default class Additem extends Component {
 
   render() {
     return (
-      <div style={{ marginTop: "100px" }}>
-        <Container>
-          <FormGroup>
-            <FormControl
-              required
-              id="item"
-              label="Name"
-              name="item"
-              autoComplete="item"
-              autoFocus
-              placeholder="Item Name"
-              onChange={e => this.handleChange(e)}
-              value={this.state.item}
-            />
-          </FormGroup>
-          <FormGroup>
-            <FormControl
-              required
-              id="price"
-              label="Price"
-              name="price"
-              autoComplete="price"
-              autoFocus
-              placeholder="Price"
-              onChange={e => this.handleChange(e)}
-              value={this.state.price}
-            />
-          </FormGroup>
-          <FormGroup>
-            <FormControl
-              required
-              id="materialCost"
-              label="materialCost"
-              name="materialCost"
-              autoComplete="materialCost"
-              autoFocus
-              placeholder="Material Cost"
-              onChange={e => this.handleChange(e)}
-              value={this.state.materialCost}
-            />
-          </FormGroup>
-          <FormGroup>
-            <FormControl
-              required
-              id="laborCost"
-              label="laborCost"
-              name="laborCost"
-              autoComplete="laborCost"
-              autoFocus
-              placeholder="Labor Cost"
-              onChange={e => this.handleChange(e)}
-              value={this.state.laborCost}
-            />
-          </FormGroup>
-          <FormGroup>
-            <FormControl
-              required
-              id="overheadCost"
-              label="overheadCost"
-              name="overheadCost"
-              autoComplete="overheadCost"
-              autoFocus
-              placeholder="Overhead Cost"
-              onChange={e => this.handleChange(e)}
-              value={this.state.overheadCost}
-            />
-          </FormGroup>
-          <FormGroup>
-            <FormControl
-              required
-              id="color"
-              label="color"
-              name="color"
-              autoComplete="color"
-              autoFocus
-              placeholder="Color"
-              onChange={e => this.handleChange(e)}
-              value={this.state.color}
-            />
-          </FormGroup>
-          <FormGroup>
-            <Button
-              type="submit"
-              variant="success"
-              style={{
-                display: "block",
-                margin: "0 auto",
-                minWidth: "150px"
-              }}
-              onClick={e => this.handleSubmit(e)}
-            >
-              Add
-            </Button>
-          </FormGroup>
-        </Container>
-      </div>
+      <>
+        <div
+          style={{
+            backgroundImage: `url(${bg})`,
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            height: "100%",
+            paddingTop: "100px"
+          }}
+        >
+          <div
+            style={{
+              width: "60%",
+              marginRight: "auto",
+              marginLeft: "auto"
+            }}
+          >
+            <Container>
+              <FormGroup>
+                <FormControl
+                  required
+                  id="item"
+                  label="Name"
+                  name="item"
+                  autoComplete="item"
+                  autoFocus
+                  placeholder="Item Name"
+                  onChange={e => this.handleChange(e)}
+                  value={this.state.item}
+                />
+              </FormGroup>
+              <FormGroup>
+                <FormControl
+                  required
+                  id="price"
+                  label="Price"
+                  name="price"
+                  autoComplete="price"
+                  autoFocus
+                  placeholder="Price"
+                  onChange={e => this.handleChange(e)}
+                  value={this.state.price}
+                />
+              </FormGroup>
+              <FormGroup>
+                <FormControl
+                  required
+                  id="materialCost"
+                  label="materialCost"
+                  name="materialCost"
+                  autoComplete="materialCost"
+                  autoFocus
+                  placeholder="Material Cost"
+                  onChange={e => this.handleChange(e)}
+                  value={this.state.materialCost}
+                />
+              </FormGroup>
+              <FormGroup>
+                <FormControl
+                  required
+                  id="laborCost"
+                  label="laborCost"
+                  name="laborCost"
+                  autoComplete="laborCost"
+                  autoFocus
+                  placeholder="Labor Cost"
+                  onChange={e => this.handleChange(e)}
+                  value={this.state.laborCost}
+                />
+              </FormGroup>
+              <FormGroup>
+                <FormControl
+                  required
+                  id="overheadCost"
+                  label="overheadCost"
+                  name="overheadCost"
+                  autoComplete="overheadCost"
+                  autoFocus
+                  placeholder="Overhead Cost"
+                  onChange={e => this.handleChange(e)}
+                  value={this.state.overheadCost}
+                />
+              </FormGroup>
+              <FormGroup>
+                <FormControl
+                  required
+                  id="color"
+                  label="color"
+                  name="color"
+                  autoComplete="color"
+                  autoFocus
+                  placeholder="Color"
+                  onChange={e => this.handleChange(e)}
+                  value={this.state.color}
+                />
+              </FormGroup>
+              <FormGroup>
+                <Button
+                  type="submit"
+                  variant="success"
+                  style={{
+                    display: "block",
+                    margin: "0 auto",
+                    minWidth: "150px"
+                  }}
+                  onClick={e => this.handleSubmit(e)}
+                >
+                  Add
+                </Button>
+              </FormGroup>
+            </Container>
+          </div>
+        </div>
+      </>
     );
   }
 }
