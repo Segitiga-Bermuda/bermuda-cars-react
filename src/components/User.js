@@ -9,6 +9,33 @@ export default class User extends Component {
     render() {
         return (
             <>
+            <Card>
+              <Accordion.Toggle as={Card.Header} eventKey="0">
+                Economy Reports
+              </Accordion.Toggle>
+              <Accordion.Collapse eventKey="0">
+                <Card.Body>
+                  <Link
+                    className="nav-link"
+                    to="/dashboard/watch-revenue-reports"
+                    style={{
+                      textDecoration: "none"
+                    }}
+                  >
+                    Watch Revenue Report
+                  </Link>
+                  <Link
+                    className="nav-link"
+                    to="/dashboard/watch-sales-reports"
+                    style={{
+                      textDecoration: "none"
+                    }}
+                  >
+                    Watch Sales Report
+                  </Link>
+                </Card.Body>
+              </Accordion.Collapse>
+            </Card>
                 <Card>
                     <Accordion.Toggle
                         as={Card.Header}
