@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Accordion, Col, Row, Image } from "react-bootstrap";
 import Admin from "./Admin";
 import Executive from "./Executive";
-import Employer from "./Employer";
+import Employee from "./Employee";
 import User from "./User";
 import ChartPie from "./Pie";
 import ChartLine from "./Line";
@@ -60,8 +60,8 @@ class Dashboard extends Component {
       return <Admin />;
     } else if (this.state.user.role === "Executive") {
       return <Executive />;
-    } else if (this.state.user.role === "Employer") {
-      return <Employer />;
+    } else if (this.state.user.role === "Employee") {
+      return <Employee />;
     } else if (this.state.user.role === "User") {
       return <User />;
     }
@@ -111,7 +111,7 @@ class Dashboard extends Component {
               width: "25%"
             }}
           />
-          <h2 className="text-info">{this.state.user.employerId}</h2>
+          <h2 className="text-info">{this.state.user.employeeId}</h2>
           <h3 className="text-danger">{this.state.user.role}</h3>
           <Accordion>{this.switchDashboard()}</Accordion>
         </Col>

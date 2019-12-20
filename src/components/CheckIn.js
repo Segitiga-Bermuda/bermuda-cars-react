@@ -71,9 +71,9 @@ export default class CheckIn extends Component {
                     }
                 </h2>
                 <h3>
-                    Employer ID:&nbsp;
+                    Employee ID:&nbsp;
                     {
-                        this.state.user.employerId
+                        this.state.user.employeeId
                     }
                 </h3>
                 <Form style={{

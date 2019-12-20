@@ -38,8 +38,8 @@ export default class ViewProfile extends Component {
         .catch(error => {
           console.log(error);
         });
-    } else if (this.state.role === "Employer") {
-      path += "/employers/view-profile";
+    } else if (this.state.role === "Employee") {
+      path += "/employees/view-profile";
 
       AXIOS()
         .get(path, this.state)
@@ -134,10 +134,10 @@ export default class ViewProfile extends Component {
               style={{ boxShadow: "6px 6px 6px gray", marginLeft: "30px" }}
             >
               <ListGroup.Item variant="success">
-                <h4>My Employer ID is</h4>
+                <h4>My Employee ID is</h4>
               </ListGroup.Item>
               <ListGroup.Item>
-                <h5>{this.state.user.employerId}</h5>
+                <h5>{this.state.user.employeeId}</h5>
               </ListGroup.Item>
             </ListGroup>
             <br />

@@ -127,8 +127,8 @@ class Profile extends Component {
         .catch(error => {
           console.log(error);
         });
-    } else if (this.state.role === "Employer") {
-      path += "/employers/update/email";
+    } else if (this.state.role === "Employee") {
+      path += "/employees/update/email";
 
       AXIOS()
         .put(path, this.state)
@@ -239,8 +239,8 @@ class Profile extends Component {
         .catch(error => {
           console.log(error);
         });
-    } else if (this.state.role === "Employer") {
-      path += "/employers/update/password";
+    } else if (this.state.role === "Employee") {
+      path += "/employees/update/password";
 
       AXIOS()
         .put(path, this.state)
@@ -332,8 +332,8 @@ class Profile extends Component {
         .catch(error => {
           console.log(error);
         });
-    } else if (this.state.role === "Employer") {
-      path += "/employers/avatar";
+    } else if (this.state.role === "Employee") {
+      path += "/employees/avatar";
 
       AXIOS()
         .put(path, this.state)

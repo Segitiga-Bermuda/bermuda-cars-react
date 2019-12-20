@@ -119,8 +119,8 @@ class Login extends Component {
         .catch(error => {
           console.log(error)
         })
-    } else if (this.state.role === "Employer") {
-      path += "/employers/log-in"
+    } else if (this.state.role === "Employee") {
+      path += "/employees/log-in"
       axios
         .post(path, this.state)
         .then(result => {
@@ -280,7 +280,7 @@ class Login extends Component {
                         >
                           <option value="Admin">Admin</option>
                           <option value="Executive">Executive</option>
-                          <option value="Employer">Employer</option>
+                          <option value="Employee">Employee</option>
                           <option value="User">User</option>
                         </FormControl>
                       </FormGroup>

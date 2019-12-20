@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Card, Accordion } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-export default class Employer extends Component {
+export default class Employee extends Component {
   render() {
     return (
       <>

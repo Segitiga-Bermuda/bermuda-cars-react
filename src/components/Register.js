@@ -25,11 +25,11 @@ class Register extends Component {
       fullName: '',
       born: '',
       gender: '',
-      employerId: '',
+      employeeId: '',
       departement: '',
       email: '',
       password: '',
-      role: 'Employer'
+      role: 'Employee'
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -75,7 +75,7 @@ class Register extends Component {
       this.state.fullName === '' ||
       this.state.born === '' ||
       this.state.gender === '' ||
-      this.state.employerId === '' ||
+      this.state.employeeId === '' ||
       this.state.departement === '' ||
       this.state.email === '' ||
       this.state.password === '' ||
@@ -272,14 +272,14 @@ class Register extends Component {
                       <FormGroup>
                         <FormControl
                           required
-                          id="employerId"
-                          label="Employer ID"
-                          name="employerId"
-                          autoComplete="employerId"
+                          id="employeeId"
+                          label="Employee ID"
+                          name="employeeId"
+                          autoComplete="employeeId"
                           autoFocus
-                          placeholder="Employer ID"
+                          placeholder="Employee ID"
                           onChange={e => this.handleChange(e)}
-                          value={this.state.employerId}
+                          value={this.state.employeeId}
                         />
                       </FormGroup>
                       <FormGroup>
@@ -335,8 +335,8 @@ class Register extends Component {
                           <option value="Executive">
                             Executive
                           </option>
-                          <option value="Employer">
-                            Employer
+                          <option value="Employee">
+                            Employee
                           </option>
                         </FormControl>
                       </FormGroup>

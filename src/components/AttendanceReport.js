@@ -37,7 +37,7 @@ export default class AttendanceReport extends Component {
                 >
                     <thead>
                         <tr>
-                            <th rowSpan="2">Employer ID</th>
+                            <th rowSpan="2">Employee ID</th>
                             <th rowSpan="2">Name</th>
                             <th rowSpan="2">Departement</th>
                             <th colSpan="31">Dates</th>

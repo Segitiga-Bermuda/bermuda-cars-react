@@ -81,7 +81,7 @@ export default class MembersAttendanceReport extends Component {
                 <tr>
                     <td>
                         {
-                            this.props.user[0].employerId
+                            this.props.user[0].employeeId
                         }
                     </td>
                     <td>
