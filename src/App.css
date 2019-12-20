@@ -229,13 +229,7 @@ footer h5 {
   font-weight: 900;
 }
 
-.dashboard .card-body {
-  color: #ffffff;
-  font-family: 'Rubik';
-  font-weight: 900;
-}
-
-.custom-control-label {
+.gender {
   color: #183bf0;
   font-family: "Noto Sans JP";
   font-weight: 900;
@@ -253,6 +247,10 @@ footer h5 {
 
 .navbar-brand {
   padding: 8px 0 !important;
+}
+
+.collapse > .card-body > .nav-link {
+  color: #808080 !important;
 }
 
 @media only screen and (max-width: 991px) {
@@ -308,3 +306,4 @@ th {
 .dashboard .card-header:hover {
   cursor: pointer;
 }
+

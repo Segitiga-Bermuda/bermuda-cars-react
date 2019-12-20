@@ -9,9 +9,7 @@ import {
   Row,
   Col,
   Container,
-  Image,
-  ListGroup,
-  ListGroupItem
+  Image
 } from "react-bootstrap";
 import { AXIOS, verify } from "../helpers";
 import Swal from "sweetalert2";
@@ -374,16 +372,14 @@ class Profile extends Component {
   render() {
     return (
       <>
-        <div
-          style={{
-            backgroundImage: `url(${bg})`,
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            height: "100%",
-            padding: "20px 0px"
-          }}
-        >
+        <div style={{
+          backgroundImage: `url(${bg})`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          height: "100%",
+          padding: "20px 0px",
+          overflow: 'auto'
+        }}>
           <div
             style={{
               width: "70%",
@@ -392,7 +388,11 @@ class Profile extends Component {
               backgroundColor: "#808080"
             }}
           >
-            <h4 style={{ color: "white" }}>EDIT PROFILE</h4>
+            <h4 style={{
+              color: "white"
+            }}>
+              EDIT PROFILE
+              </h4>
           </div>
           <Container
             style={{
@@ -411,7 +411,10 @@ class Profile extends Component {
                 height: "auto",
                 margin: "25px auto",
                 padding: "15px",
-                width: "25%"
+                width:
+                  window.innerWidth >= 991 ?
+                    '25%' :
+                    '80%'
               }}
             />
             <Row

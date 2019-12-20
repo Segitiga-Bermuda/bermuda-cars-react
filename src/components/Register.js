@@ -8,6 +8,7 @@ import {
   Button,
   FormControl,
   Form,
+  FormText,
   FormGroup
 } from "react-bootstrap"
 import { withRouter } from "react-router-dom"
@@ -247,22 +248,21 @@ class Register extends Component {
                       </FormGroup>
                       <FormGroup>
                         <Col style={{ textAlign: "center" }}>
+                          <FormText>
+                            Gender:
+                          </FormText>
                           <Form.Check
-                            custom
-                            inline
                             label="Male"
                             type="radio"
-                            id={`custom-inline-radio-1 gender`}
+                            className="custom-inline-radio-1 gender"
                             name="gender"
                             value="Male"
                             onChange={e => this.handleChange(e)}
                           />
                           <Form.Check
-                            custom
-                            inline
                             label="Female"
                             type="radio"
-                            id={`custom-inline-radio-2 gender`}
+                            className="custom-inline-radio-2 gender"
                             name="gender"
                             value="Female"
                             onChange={e => this.handleChange(e)}

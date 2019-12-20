@@ -32,7 +32,7 @@ export default class MembersAttendanceReport extends Component {
             } else {
                 report.push((
                     <td style={{
-                        backgroundColor: 'white'
+                        backgroundColor: '#00c0c0'
                     }}>
                     </td>
                 ))

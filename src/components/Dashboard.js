@@ -1,14 +1,17 @@
 import React, { Component } from "react";
-import { Accordion, Col, Row, Image } from "react-bootstrap";
+import {
+  Accordion,
+  Col,
+  Row,
+  Image
+} from "react-bootstrap";
 import Admin from "./Admin";
 import Executive from "./Executive";
 import Employee from "./Employee";
 import User from "./User";
 import ChartPie from "./Pie";
 import ChartLine from "./Line";
-import Absen from "./Absen";
 import Profile from "./Profile";
-import Boy from "../assets/images/boy.png";
 import CheckIn from './CheckIn'
 import { verify } from "../helpers";
 import { withRouter } from "react-router-dom";
@@ -16,6 +19,7 @@ import ViewProfile from "./ViewProfile";
 import Additem from "./Additem";
 import AttendanceReport from './AttendanceReport'
 import AddSales from './AddSales'
+import Tasks from './Tasks'
 
 class Dashboard extends Component {
   constructor(props) {
@@ -40,16 +44,15 @@ class Dashboard extends Component {
     } else if (func === "add-sales-report") {
       return <AddSales />
     } else if (func === "check-in") {
-      return <CheckIn/>
+      return <CheckIn />
     } else if (func === "watch-attendance-reports") {
       return <AttendanceReport />;
     } else if (func === "tasks-manager") {
+      return <Tasks />
     } else if (func === "view-profile") {
       return <ViewProfile />;
     } else if (func === "edit-profile") {
       return <Profile />;
-    } else if (func === "add-sales-report") {
-    } else if (func === "add-sales-report") {
     } else if (func === "add-item") {
       return <Additem />;
     }

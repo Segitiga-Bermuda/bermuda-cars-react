@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import { verify } from "../helpers";
 import { AXIOS } from "../helpers";
-import { Image, ListGroup } from "react-bootstrap";
+import {
+  Image,
+  ListGroup
+} from "react-bootstrap";
 import background from "../assets/images/classic.jpg";
 
 export default class ViewProfile extends Component {
@@ -66,21 +69,16 @@ export default class ViewProfile extends Component {
   render() {
     return (
       <>
-        <div
-          style={{
-            backgroundImage: `url(${background})`,
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover"
-          }}
-        >
-          <div
-            style={{
-              margin: "0 auto",
-              width: "70%",
-              textAlign: "center"
-            }}
-          >
+        <div style={{
+          backgroundImage: `url(${background})`,
+          backgroundPosition: "center",
+          backgroundSize: "cover"
+        }}>
+          <div style={{
+            margin: "0 auto",
+            width: "70%",
+            textAlign: "center"
+          }}>
             <br />
             <Image
               src={this.state.user.avatarPath}
@@ -94,45 +92,64 @@ export default class ViewProfile extends Component {
               }}
             />
             <br />
-            <ListGroup
-              style={{
-                boxShadow: "6px 6px 6px gray",
-                marginRight: "30px"
-              }}
-            >
+            <ListGroup style={{
+              boxShadow: "6px 6px 6px gray",
+              marginRight: "30px"
+            }}>
               <ListGroup.Item variant="primary">
-                <h4>My Full Name Is</h4>
+                <h4>
+                  My Full Name Is
+                </h4>
               </ListGroup.Item>
               <ListGroup.Item>
-                <h5>{this.state.user.fullName}</h5>
+                <h5>
+                  {
+                    this.state.user.fullName
+                  }
+                </h5>
               </ListGroup.Item>
             </ListGroup>
             <br />
-            <ListGroup
-              style={{ boxShadow: "6px 6px 6px gray", marginLeft: "30px" }}
-            >
+            <ListGroup style={{
+              boxShadow: "6px 6px 6px gray",
+              marginLeft: "30px"
+            }}>
               <ListGroup.Item variant="success">
-                <h4>Born</h4>
+                <h4>
+                  Born
+                </h4>
               </ListGroup.Item>
               <ListGroup.Item>
-                <h5>{this.state.user.born}</h5>
+                <h5>
+                  {
+                    this.state.user.born
+                  }
+                </h5>
               </ListGroup.Item>
             </ListGroup>
             <br />
-            <ListGroup
-              style={{ boxShadow: "6px 6px 6px gray", marginRight: "30px" }}
-            >
+            <ListGroup style={{
+              boxShadow: "6px 6px 6px gray",
+              marginRight: "30px"
+            }}>
               <ListGroup.Item variant="primary">
-                <h4>My Gender is</h4>
+                <h4>
+                  My Gender is
+                </h4>
               </ListGroup.Item>
               <ListGroup.Item>
-                <h5>{this.state.user.gender}</h5>
+                <h5>
+                  {
+                    this.state.user.gender
+                  }
+                </h5>
               </ListGroup.Item>
             </ListGroup>
             <br />
-            <ListGroup
-              style={{ boxShadow: "6px 6px 6px gray", marginLeft: "30px" }}
-            >
+            <ListGroup style={{
+              boxShadow: "6px 6px 6px gray",
+              marginLeft: "30px"
+            }}>
               <ListGroup.Item variant="success">
                 <h4>My Employee ID is</h4>
               </ListGroup.Item>
@@ -142,24 +159,40 @@ export default class ViewProfile extends Component {
             </ListGroup>
             <br />
             <ListGroup
-              style={{ boxShadow: "6px 6px 6px gray", marginRight: "30px" }}
+              style={{
+                boxShadow: "6px 6px 6px gray",
+                marginRight: "30px"
+              }}
             >
               <ListGroup.Item variant="primary">
-                <h4>My Departement is</h4>
+                <h4>
+                  My Departement is
+                </h4>
               </ListGroup.Item>
               <ListGroup.Item>
-                <h5>{this.state.user.departement}</h5>
+                <h5>
+                  {
+                    this.state.user.departement
+                  }
+                </h5>
               </ListGroup.Item>
             </ListGroup>
             <br />
-            <ListGroup
-              style={{ boxShadow: "6px 6px 6px gray", marginLeft: "30px" }}
-            >
+            <ListGroup style={{
+              boxShadow: "6px 6px 6px gray",
+              marginLeft: "30px"
+            }}>
               <ListGroup.Item variant="success">
-                <h4>My Role is</h4>
+                <h4>
+                  My Role is
+                </h4>
               </ListGroup.Item>
               <ListGroup.Item>
-                <h5>{this.state.user.role}</h5>
+                <h5>
+                  {
+                    this.state.user.role
+                  }
+                </h5>
               </ListGroup.Item>
             </ListGroup>
             <br />

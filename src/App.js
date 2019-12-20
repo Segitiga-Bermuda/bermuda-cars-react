@@ -10,14 +10,9 @@ import {
   Feature,
   Contact,
   Register2,
-  Dashboard,
-  Absen,
-  ChartLine,
-  ChartPie,
-  Profile,
-  Additem
+  Dashboard
 } from "./components";
-import "./App.css";
+import "./App.min.css";
 
 const App = () => {
   return (

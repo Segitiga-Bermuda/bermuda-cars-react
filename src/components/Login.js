@@ -73,7 +73,7 @@ class Login extends Component {
         .then(result => {
           if (result.data.message === "Email or password is wrong!") {
             Swal.fire({
-              text: result.data.message,
+              title: "Role, Email, or Password is Wrong!",
               icon: "error"
             })
 
@@ -113,7 +113,7 @@ class Login extends Component {
           }).then(decision => {
             localStorage.setItem("token", JSON.stringify(result.data.token))
 
-            this.props.history.push("/")
+            this.props.history.push("/dashboard")
           })
         })
         .catch(error => {
@@ -139,7 +139,7 @@ class Login extends Component {
           }).then(decision => {
             localStorage.setItem("token", JSON.stringify(result.data.token))
 
-            this.props.history.push("/")
+            this.props.history.push("/dashboard")
           })
         })
         .catch(error => {
@@ -168,7 +168,7 @@ class Login extends Component {
             .then(decision => {
               localStorage.setItem("token", JSON.stringify(result.data.token))
 
-              this.props.history.push("/")
+              this.props.history.push("/dashboard")
             })
         })
         .catch(error => {
