@@ -12,7 +12,7 @@ import {
   Register2,
   Dashboard
 } from "./components";
-import "./App.css";
+import "./App.min.css";
 
 const App = () => {
   return (
