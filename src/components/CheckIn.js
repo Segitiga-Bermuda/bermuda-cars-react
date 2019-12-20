@@ -37,6 +37,7 @@ export default class CheckIn extends Component {
 
         AXIOS().post(path, this.state)
             .then(result => {
+                console.log(result)
                 if (result.data.message === 'You have been check in today.') {
                     Swal.fire({
                         title: result.data.message,
@@ -50,6 +51,11 @@ export default class CheckIn extends Component {
                 } else if (result.data.message === 'You Are Late.') {
                     Swal.fire({
                         title: 'You Are Late.',
+                        icon: 'warning'
+                    })
+                } else if (result.data.message === 'This is weekend.') {
+                    Swal.fire({
+                        title: 'This is weekend.',
                         icon: 'warning'
                     })
                 }
