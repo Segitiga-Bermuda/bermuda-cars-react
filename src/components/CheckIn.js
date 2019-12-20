@@ -45,7 +45,7 @@ export default class CheckIn extends Component {
                     })
                 } else if (result.data.message === 'Data is successfully added.') {
                     Swal.fire({
-                        title: 'You Have Been Check In Today.',
+                        title: 'You are Successfully Check In.',
                         icon: 'success'
                     })
                 } else if (result.data.message === 'You Are Late.') {
